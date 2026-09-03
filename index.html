@@ -9,155 +9,189 @@
 
     <style>
 
-        /* -------------------- */
-        /* Basic Page Styling   */
-        /* -------------------- */
+        /* =========================
+           GENERAL PAGE STYLING
+        ========================= */
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: white;
-            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
         }
 
 
-        /* -------------------- */
-        /* Navigation Bar       */
-        /* -------------------- */
+        /* =========================
+           NAVIGATION BAR
+        ========================= */
 
         .navigation {
             position: fixed;
-
             top: 0;
             left: 0;
             right: 0;
 
-            height: 70px;
+            height: 75px;
 
             display: flex;
             align-items: center;
-
-            /* Spreads the navigation across the top */
             justify-content: space-between;
 
             padding: 0 50px;
 
-            background-color: white;
+            background-color: #ffffff;
 
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #dddddd;
 
             box-sizing: border-box;
 
-            z-index: 9999;
+            z-index: 1000;
         }
 
 
         /* Navigation Links */
 
         .navigation a {
-            color: #333;
-
+            color: #333333;
             text-decoration: none;
 
             font-size: 16px;
-
             font-weight: 500;
 
-            padding: 10px 15px;
+            padding: 10px 20px;
 
             transition: 0.3s;
         }
 
 
-        /* Navigation Hover Effect */
+        /* Navigation Hover */
 
         .navigation a:hover {
-            color: #777;
-
+            color: #777777;
             text-decoration: underline;
         }
 
 
-        /* -------------------- */
-        /* Main Home Page       */
-        /* -------------------- */
+        /* =========================
+           HOME PAGE
+        ========================= */
 
         main {
-            padding-top: 70px;
+            padding-top: 75px;
         }
 
 
-        /* Home Section */
-
         .home {
-            min-height: calc(100vh - 70px);
+            min-height: calc(100vh - 75px);
 
             display: flex;
-
             flex-direction: column;
 
             justify-content: center;
-
             align-items: center;
 
             text-align: center;
 
             padding: 40px;
+            box-sizing: border-box;
         }
 
 
-        /* Main Heading */
+        /* Main Introduction */
 
         .home h1 {
-            font-size: 48px;
-
-            margin-bottom: 20px;
+            font-size: 52px;
+            margin: 0 0 15px 0;
         }
 
 
-        /* Introduction */
+        .home h2 {
+            font-size: 24px;
+            font-weight: normal;
+
+            margin: 0 0 20px 0;
+        }
+
 
         .home p {
-            font-size: 20px;
+            font-size: 18px;
 
             max-width: 600px;
 
             line-height: 1.6;
+
+            margin: 0;
         }
 
 
-        /* -------------------- */
-        /* Footer               */
-        /* -------------------- */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
             text-align: center;
 
-            padding: 20px;
+            padding: 25px;
 
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #dddddd;
+
+            font-size: 14px;
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- Navigation is added here automatically by JavaScript -->
+
+    <!-- =========================
+         JAVASCRIPT NAVIGATION
+    ========================= -->
+
+    <script>
+
+        // Create the navigation bar
+        const navigation = document.createElement("nav");
+
+        // Give the navigation its class
+        navigation.className = "navigation";
+
+        // Create the four navigation categories
+        navigation.innerHTML = `
+
+            <a href="index.html">About Me</a>
+
+            <a href="education.html">Education</a>
+
+            <a href="experience.html">Professional Experience</a>
+
+            <a href="involvement.html">Involvement</a>
+
+        `;
+
+        // Add the navigation bar to the website
+        document.body.appendChild(navigation);
+
+    </script>
 
 
-    <!-- Main Content -->
+    <!-- =========================
+         HOME PAGE CONTENT
+    ========================= -->
 
     <main>
 
         <section class="home">
 
-            <h1>Welcome to My Website</h1>
+            <h1>Hi, I'm Lauren! 👋</h1>
+
+            <h2>Welcome to my personal website.</h2>
 
             <p>
-                This is my personal website. Explore the different sections
-                to learn more about me.
+                Marketing student, traveler, and creative thinker.
+                Get to know me, my experiences, and what inspires me!
             </p>
 
         </section>
@@ -165,7 +199,9 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
@@ -173,10 +209,6 @@
 
     </footer>
 
-
-    <!-- JavaScript File -->
-
-    <script src="script.js"></script>
 
 </body>
 
