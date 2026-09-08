@@ -1,13 +1,14 @@
 /* =========================================================
-   NAVIGATION.JS
+   navigation.js
 
-   Reusable navigation system for all website pages.
+   Creates the reusable navigation on every page.
 
-   This creates:
+   Contains ONLY:
    - Logo
    - Primary navigation
 
-   Secondary navigation has been removed.
+   There is NO secondary navigation.
+   There is NO top-middle description.
    ========================================================= */
 
 
@@ -25,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!navigationContainer) {
 
         console.error(
-            "Navigation container #site-navigation was not found."
+            "ERROR: #site-navigation was not found."
         );
 
         return;
@@ -34,13 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       PRIMARY NAVIGATION LINKS
+       PRIMARY NAVIGATION
 
-       Change the filenames if your GitHub pages
-       use different names.
+       Change these filenames if your pages
+       have different names.
        ===================================================== */
 
-    const primaryLinks = [
+    const navigationLinks = [
 
         {
             name: "About Me",
@@ -83,36 +84,39 @@ document.addEventListener("DOMContentLoaded", function () {
         "site-header";
 
 
+    /* =====================================================
+       HEADER HTML
+
+       NOTICE:
+       There is ONLY the logo.
+
+       NO description.
+       NO words in the middle.
+       NO secondary navigation.
+       ===================================================== */
+
     header.innerHTML = `
 
-        <!-- LOGO -->
+        <div class="logo-row">
 
-        <div class="header-top">
+            <a
+                href="index.html"
+                class="logo"
+            >
 
-            <div class="logo-area">
+                Lauren Bock
 
-                <a
-                    href="index.html"
-                    aria-label="Home"
-                >
-
-                    Lauren Bock
-
-                </a>
-
-            </div>
+            </a>
 
         </div>
 
 
-        <!-- PRIMARY NAVIGATION -->
-
         <nav
-            class="primary-nav"
-            aria-label="Primary navigation"
+            class="primary-navigation"
+            aria-label="Primary Navigation"
         >
 
-            <ul id="primary-navigation">
+            <ul id="primary-navigation-list">
 
             </ul>
 
@@ -131,16 +135,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CREATE PRIMARY NAVIGATION LINKS
+       CREATE NAVIGATION LINKS
        ===================================================== */
 
-    const primaryNav =
+    const navigationList =
         document.getElementById(
-            "primary-navigation"
+            "primary-navigation-list"
         );
 
 
-    primaryLinks.forEach(function (link) {
+    navigationLinks.forEach(function (link) {
 
 
         const listItem =
@@ -162,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
         listItem.appendChild(anchor);
 
 
-        primaryNav.appendChild(listItem);
+        navigationList.appendChild(listItem);
 
     });
 
@@ -172,11 +176,25 @@ document.addEventListener("DOMContentLoaded", function () {
        FIND CURRENT PAGE
        ===================================================== */
 
-    const currentPage =
+    let currentPage =
         window.location.pathname
             .split("/")
-            .pop()
-        || "index.html";
+            .pop();
+
+
+    /* GitHub Pages sometimes gives an empty
+       pathname for the home page. */
+
+    if (
+        currentPage === ""
+        ||
+        currentPage === "/"
+    ) {
+
+        currentPage =
+            "index.html";
+
+    }
 
 
 
@@ -184,29 +202,33 @@ document.addEventListener("DOMContentLoaded", function () {
        HIGHLIGHT CURRENT PAGE
        ===================================================== */
 
-    document
-        .querySelectorAll(".primary-nav a")
-        .forEach(function (link) {
+    const allNavigationLinks =
+        document.querySelectorAll(
+            ".primary-navigation a"
+        );
 
 
-            const linkPage =
-                link
-                    .getAttribute("href")
-                    .split("/")
-                    .pop();
+    allNavigationLinks.forEach(function (link) {
 
 
-            if (linkPage === currentPage) {
+        const linkPage =
+            link
+                .getAttribute("href")
+                .split("/")
+                .pop();
 
-                link.classList.add("active");
 
-                link.setAttribute(
-                    "aria-current",
-                    "page"
-                );
+        if (linkPage === currentPage) {
 
-            }
+            link.classList.add("active");
 
-        });
+            link.setAttribute(
+                "aria-current",
+                "page"
+            );
+
+        }
+
+    });
 
 });
