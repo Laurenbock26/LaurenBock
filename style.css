@@ -1,61 +1,50 @@
 /* =========================================================
-   STYLE.CSS
-   Personal Portfolio Website
+   style.css
    ========================================================= */
 
-
-/* =========================================================
-   COLORS
-   ========================================================= */
+/* ---------- PAGE COLORS ---------- */
 
 :root {
-    --pastel-blue: #dceff7;
-    --pastel-blue-dark: #b9dce9;
-    --pastel-blue-light: #eaf7fb;
-    --blue-text: #24566b;
-    --border: #8fb7c5;
-    --text: #24343a;
+    --pastel-blue: #d9eef7;
+    --pastel-blue-dark: #b8dce9;
+    --pastel-blue-light: #e7f5fa;
+    --text-blue: #28566a;
+    --border-blue: #8db8c7;
 }
 
 
-/* =========================================================
-   BASIC PAGE SETTINGS
-   ========================================================= */
+/* ---------- RESET ---------- */
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
+/* ---------- ENTIRE PAGE ---------- */
+
+html,
 body {
-    margin: 0;
-    padding: 0;
-
-    background-color: var(--pastel-blue);
-
-    color: var(--text);
+    width: 100%;
+    min-height: 100%;
 
     font-family: Arial, Helvetica, sans-serif;
 
-    line-height: 1.6;
+    background-color: var(--pastel-blue);
+
+    color: var(--text-blue);
 }
 
 
 /* =========================================================
-   MAIN WEBSITE CONTAINER
-
-   80% width gives you:
-   10% margin on the left
-   10% margin on the right
+   10% LEFT + RIGHT MARGIN
    ========================================================= */
 
-.site-shell {
+.site-container {
     width: 80%;
-
-    margin: 0 auto;
+    margin-left: 10%;
+    margin-right: 10%;
 
     min-height: 100vh;
 
@@ -65,53 +54,48 @@ body {
 
 /* =========================================================
    HEADER
+   ONLY THE LOGO IS HERE
+   NO TOP-MIDDLE WORDS
    ========================================================= */
 
 .site-header {
+    width: 100%;
+
     background-color: var(--pastel-blue);
 
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-blue);
 }
 
 
-/* =========================================================
-   LOGO
-   ========================================================= */
+/* Logo row */
 
-.header-top {
-    display: grid;
-
-    grid-template-columns: 190px 1fr;
+.logo-row {
+    width: 100%;
 
     min-height: 110px;
-}
 
-
-/* Logo area */
-
-.logo-area {
     display: flex;
 
     align-items: center;
 
-    justify-content: center;
+    justify-content: flex-start;
+
+    padding-left: 30px;
 
     background-color: var(--pastel-blue);
-
-    padding: 20px;
 }
 
 
-/* Logo text */
+/* Logo */
 
-.logo-area a {
-    color: var(--blue-text);
+.logo {
+    color: var(--text-blue);
+
+    font-size: 36px;
+
+    font-weight: 700;
 
     text-decoration: none;
-
-    font-size: 2rem;
-
-    font-weight: bold;
 }
 
 
@@ -119,68 +103,79 @@ body {
    PRIMARY NAVIGATION
    ========================================================= */
 
-.primary-nav {
+.primary-navigation {
+    width: 100%;
+
     background-color: var(--pastel-blue);
 
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--border-blue);
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-blue);
 }
 
 
-.primary-nav ul {
+.primary-navigation ul {
+    width: 100%;
+
     list-style: none;
-
-    margin: 0;
-
-    padding: 0;
 
     display: flex;
 
     justify-content: center;
 
+    align-items: stretch;
+
     flex-wrap: wrap;
 }
 
 
-.primary-nav li {
-    margin: 0;
+.primary-navigation li {
+    display: flex;
 }
 
 
-.primary-nav a {
-    display: block;
+.primary-navigation a {
+    display: flex;
 
-    padding: 12px 18px;
+    align-items: center;
 
-    color: var(--blue-text);
+    justify-content: center;
+
+    padding: 14px 20px;
+
+    color: var(--text-blue);
 
     text-decoration: none;
 
-    font-weight: bold;
+    font-size: 15px;
+
+    font-weight: 600;
 }
 
 
-.primary-nav a:hover,
-.primary-nav a.active {
+.primary-navigation a:hover {
+    background-color: var(--pastel-blue-dark);
+}
+
+
+.primary-navigation a.active {
     background-color: var(--pastel-blue-dark);
 }
 
 
 /* =========================================================
-   MAIN THREE-COLUMN AREA
+   MAIN PAGE LAYOUT
+   LEFT NAV | MAIN CONTENT | RIGHT SIDEBAR
    ========================================================= */
 
-.content-layout {
+.main-layout {
+    width: 100%;
+
+    min-height: 600px;
 
     display: grid;
 
-    grid-template-columns:
-        190px
-        minmax(0, 1fr)
-        170px;
-
-    min-height: 600px;
+    grid-template-columns: 190px minmax(0, 1fr) 170px;
 
     background-color: var(--pastel-blue);
 }
@@ -191,113 +186,82 @@ body {
    ========================================================= */
 
 .left-navigation {
-
     background-color: var(--pastel-blue);
 
-    border-right: 1px solid var(--border);
+    border-right: 1px solid var(--border-blue);
 
-    padding: 28px 20px;
+    padding: 30px 20px;
 }
 
 
 .left-navigation h2 {
+    color: var(--text-blue);
 
-    margin-top: 0;
+    font-size: 20px;
 
-    color: var(--blue-text);
-
-    font-size: 1.15rem;
+    margin-bottom: 20px;
 }
 
 
 .left-navigation ul {
-
     list-style: none;
-
-    margin: 0;
-
-    padding: 0;
 }
 
 
 .left-navigation li {
-
-    margin: 0;
+    margin-bottom: 0;
 }
 
 
 .left-navigation a {
-
     display: block;
 
-    padding: 8px 0;
+    padding: 10px 0;
 
-    color: var(--blue-text);
+    color: var(--text-blue);
 
     text-decoration: none;
 
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid var(--border-blue);
+
+    font-size: 15px;
 }
 
 
-.left-navigation a:hover,
-.left-navigation a.active {
+.left-navigation a:hover {
+    font-weight: bold;
+}
 
+
+.left-navigation a.active {
     font-weight: bold;
 }
 
 
 /* =========================================================
-   MAIN CONTENT AREA
+   MAIN CONTENT
+   EVERYTHING IS PASTEL BLUE
    ========================================================= */
 
 .main-content {
-
     background-color: var(--pastel-blue);
 
     padding: 30px;
 }
 
 
-.main-content h1 {
-
-    margin-top: 0;
-
-    color: var(--blue-text);
-
-    font-size: 2rem;
-}
-
-
-.main-content h2 {
-
-    color: var(--blue-text);
-
-    font-size: 1.45rem;
-}
-
-
-.main-content p {
-
-    max-width: 750px;
-}
-
-
-/* =========================================================
-   HERO IMAGE
-   ========================================================= */
+/* ---------- HERO IMAGE ---------- */
 
 .hero-image {
-
     width: 100%;
 
-    min-height: 170px;
+    height: 180px;
 
-    margin-bottom: 28px;
-
-    border: 1px solid var(--border);
+    margin-bottom: 30px;
 
     background-color: var(--pastel-blue-light);
+
+    border: 1px solid var(--border-blue);
 
     display: flex;
 
@@ -310,100 +274,126 @@ body {
 
 
 .hero-image img {
-
     width: 100%;
 
     height: 100%;
-
-    min-height: 170px;
 
     object-fit: cover;
 }
 
 
 .hero-placeholder {
+    color: var(--text-blue);
 
-    color: var(--blue-text);
+    font-size: 24px;
 
-    font-size: 1.4rem;
-
-    font-weight: bold;
+    font-weight: 600;
 
     text-align: center;
 }
 
 
-/* =========================================================
-   RIGHT STICKY SIDEBAR
-   ========================================================= */
+/* ---------- MAIN HEADINGS ---------- */
 
-.sticky-sidebar {
+.main-content h1 {
+    color: var(--text-blue);
 
-    background-color: var(--pastel-blue);
+    font-size: 32px;
 
-    border-left: 1px solid var(--border);
-
-    padding: 28px 18px;
+    margin-bottom: 20px;
 }
 
 
-.sticky-box {
+.main-content h2 {
+    color: var(--text-blue);
 
+    font-size: 23px;
+
+    margin-top: 30px;
+
+    margin-bottom: 12px;
+}
+
+
+/* ---------- MAIN TEXT ---------- */
+
+.main-content p {
+    color: var(--text-blue);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   RIGHT STICKY CONTENT
+   ========================================================= */
+
+.right-sidebar {
+    background-color: var(--pastel-blue);
+
+    border-left: 1px solid var(--border-blue);
+
+    padding: 30px 18px;
+}
+
+
+.sticky-content {
     position: sticky;
 
     top: 20px;
 }
 
 
-.sticky-sidebar h2 {
+.right-sidebar h2 {
+    color: var(--text-blue);
 
-    margin-top: 0;
+    font-size: 19px;
 
-    color: var(--blue-text);
-
-    font-size: 1.1rem;
+    margin-bottom: 20px;
 }
 
 
-.sticky-sidebar a {
-
+.right-sidebar a {
     display: block;
 
-    margin-bottom: 12px;
-
-    color: var(--blue-text);
+    color: var(--text-blue);
 
     text-decoration: none;
+
+    margin-bottom: 14px;
+
+    font-size: 15px;
 }
 
 
-.sticky-sidebar a:hover {
-
+.right-sidebar a:hover {
     text-decoration: underline;
 }
 
 
 /* =========================================================
-   SOCIAL MEDIA LINKS
+   SOCIAL MEDIA
    ========================================================= */
 
 .social-links {
-
     display: flex;
 
     gap: 8px;
 
-    flex-wrap: wrap;
-
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 
 .social-links a {
+    width: 34px;
 
-    width: 35px;
+    height: 34px;
 
-    height: 35px;
+    margin: 0;
 
     display: flex;
 
@@ -411,15 +401,17 @@ body {
 
     justify-content: center;
 
-    margin: 0;
-
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-blue);
 
     border-radius: 50%;
 
     background-color: var(--pastel-blue-light);
 
+    font-size: 12px;
+
     font-weight: bold;
+
+    text-decoration: none;
 }
 
 
@@ -428,32 +420,38 @@ body {
    ========================================================= */
 
 .site-footer {
-
-    border-top: 1px solid var(--border);
+    width: 100%;
 
     background-color: var(--pastel-blue);
 
-    padding: 18px 24px;
+    border-top: 1px solid var(--border-blue);
+
+    padding: 20px;
 
     text-align: center;
 
-    font-size: 0.85rem;
-
-    color: var(--blue-text);
+    color: var(--text-blue);
 }
 
 
 .site-footer p {
+    margin: 5px 0;
 
-    margin: 4px 0;
+    font-size: 14px;
 }
 
 
 .site-footer a {
-
-    color: var(--blue-text);
+    color: var(--text-blue);
 
     margin: 0 6px;
+
+    text-decoration: none;
+}
+
+
+.site-footer a:hover {
+    text-decoration: underline;
 }
 
 
@@ -461,38 +459,30 @@ body {
    TABLET
    ========================================================= */
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
 
-    .site-shell {
-
+    .site-container {
         width: 90%;
+
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
 
-    .content-layout {
-
+    .main-layout {
         grid-template-columns:
             160px
             minmax(0, 1fr);
     }
 
 
-    .sticky-sidebar {
-
+    .right-sidebar {
         display: none;
     }
 
 
-    .header-top {
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .logo-area {
-
-        min-height: 90px;
+    .primary-navigation a {
+        padding: 12px 14px;
     }
 }
 
@@ -501,38 +491,53 @@ body {
    MOBILE
    ========================================================= */
 
-@media (max-width: 650px) {
+@media screen and (max-width: 650px) {
 
-    .site-shell {
-
+    .site-container {
         width: 94%;
+
+        margin-left: 3%;
+        margin-right: 3%;
     }
 
 
-    .primary-nav ul {
+    .logo-row {
+        justify-content: center;
 
+        padding-left: 0;
+    }
+
+
+    .primary-navigation ul {
         flex-direction: column;
-
-        text-align: center;
     }
 
 
-    .content-layout {
+    .primary-navigation a {
+        width: 100%;
 
-        grid-template-columns: 1fr;
+        border-bottom: 1px solid var(--border-blue);
+    }
+
+
+    .main-layout {
+        display: block;
     }
 
 
     .left-navigation {
-
         border-right: none;
 
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--border-blue);
     }
 
 
     .main-content {
+        padding: 20px;
+    }
 
-        padding: 22px;
+
+    .hero-image {
+        height: 150px;
     }
 }
