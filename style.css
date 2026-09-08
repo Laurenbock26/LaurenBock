@@ -1,22 +1,26 @@
-from pathlib import Path
+/* =========================================================
+   STYLE.CSS
+   Personal Portfolio Website
+   ========================================================= */
 
-css = r"""/* =========================================================
-   style.css
-   Portfolio layout based on the provided wireframe
-   - 10% page margin on left/right
-   - Pastel blue theme
-   - Reusable header, navigation, main content, sidebar, footer
+
+/* =========================================================
+   COLORS
    ========================================================= */
 
 :root {
     --pastel-blue: #dceff7;
     --pastel-blue-dark: #b9dce9;
+    --pastel-blue-light: #eaf7fb;
     --blue-text: #24566b;
-    --white: #ffffff;
     --border: #8fb7c5;
     --text: #24343a;
-    --shadow: 0 3px 12px rgba(36, 86, 107, 0.10);
 }
+
+
+/* =========================================================
+   BASIC PAGE SETTINGS
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -28,594 +32,507 @@ html {
 
 body {
     margin: 0;
-    background: var(--pastel-blue);
+    padding: 0;
+
+    background-color: var(--pastel-blue);
+
     color: var(--text);
+
     font-family: Arial, Helvetica, sans-serif;
+
     line-height: 1.6;
 }
 
-/* 10% margin on each side */
+
+/* =========================================================
+   MAIN WEBSITE CONTAINER
+
+   80% width gives you:
+   10% margin on the left
+   10% margin on the right
+   ========================================================= */
+
 .site-shell {
     width: 80%;
+
     margin: 0 auto;
+
     min-height: 100vh;
-    background: var(--white);
-    box-shadow: var(--shadow);
+
+    background-color: var(--pastel-blue);
 }
 
-/* =========================
+
+/* =========================================================
    HEADER
-   ========================= */
+   ========================================================= */
 
 .site-header {
-    background: var(--white);
+    background-color: var(--pastel-blue);
+
     border: 1px solid var(--border);
 }
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
 
 .header-top {
     display: grid;
+
     grid-template-columns: 190px 1fr;
-    min-height: 105px;
+
+    min-height: 110px;
 }
+
+
+/* Logo area */
 
 .logo-area {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
-    background: var(--pastel-blue);
-    border-right: 1px solid var(--border);
+
+    background-color: var(--pastel-blue);
+
     padding: 20px;
 }
 
+
+/* Logo text */
+
 .logo-area a {
     color: var(--blue-text);
+
     text-decoration: none;
+
     font-size: 2rem;
-    font-weight: 700;
+
+    font-weight: bold;
 }
 
-.header-info {
-    display: flex;
-    align-items: center;
-    padding: 20px 28px;
-}
 
-.header-info p {
-    margin: 0;
-    font-size: 0.95rem;
-}
-
-/* =========================
+/* =========================================================
    PRIMARY NAVIGATION
-   ========================= */
+   ========================================================= */
 
 .primary-nav {
+    background-color: var(--pastel-blue);
+
     border-top: 1px solid var(--border);
+
     border-bottom: 1px solid var(--border);
-    background: var(--pastel-blue);
 }
 
-.primary-nav ul,
-.secondary-nav ul,
-.side-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 
 .primary-nav ul {
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+
     display: flex;
+
     justify-content: center;
+
     flex-wrap: wrap;
 }
+
+
+.primary-nav li {
+    margin: 0;
+}
+
 
 .primary-nav a {
     display: block;
+
     padding: 12px 18px;
+
     color: var(--blue-text);
+
     text-decoration: none;
-    font-weight: 600;
+
+    font-weight: bold;
 }
+
 
 .primary-nav a:hover,
 .primary-nav a.active {
-    background: var(--pastel-blue-dark);
+    background-color: var(--pastel-blue-dark);
 }
 
-/* =========================
-   SECONDARY NAVIGATION
-   ========================= */
 
-.secondary-nav {
-    min-height: 38px;
-    border-bottom: 1px solid var(--border);
-    background: #f4fbfd;
-}
-
-.secondary-nav ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.secondary-nav a {
-    display: block;
-    padding: 7px 15px;
-    color: var(--blue-text);
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.secondary-nav a:hover,
-.secondary-nav a.active {
-    text-decoration: underline;
-}
-
-/* =========================
+/* =========================================================
    MAIN THREE-COLUMN AREA
-   ========================= */
+   ========================================================= */
 
 .content-layout {
+
     display: grid;
-    grid-template-columns: 190px minmax(0, 1fr) 170px;
+
+    grid-template-columns:
+        190px
+        minmax(0, 1fr)
+        170px;
+
     min-height: 600px;
+
+    background-color: var(--pastel-blue);
 }
 
-/* Left navigation */
+
+/* =========================================================
+   LEFT NAVIGATION
+   ========================================================= */
+
 .left-navigation {
-    background: #f4fbfd;
+
+    background-color: var(--pastel-blue);
+
     border-right: 1px solid var(--border);
+
     padding: 28px 20px;
 }
 
+
 .left-navigation h2 {
+
     margin-top: 0;
+
     color: var(--blue-text);
+
     font-size: 1.15rem;
 }
 
-.left-navigation a {
-    display: block;
-    padding: 8px 0;
-    color: var(--blue-text);
-    text-decoration: none;
-    border-bottom: 1px solid #d9ebf1;
+
+.left-navigation ul {
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
 }
+
+
+.left-navigation li {
+
+    margin: 0;
+}
+
+
+.left-navigation a {
+
+    display: block;
+
+    padding: 8px 0;
+
+    color: var(--blue-text);
+
+    text-decoration: none;
+
+    border-bottom: 1px solid var(--border);
+}
+
 
 .left-navigation a:hover,
 .left-navigation a.active {
-    font-weight: 700;
+
+    font-weight: bold;
 }
 
-/* Main content */
+
+/* =========================================================
+   MAIN CONTENT AREA
+   ========================================================= */
+
 .main-content {
+
+    background-color: var(--pastel-blue);
+
     padding: 30px;
-    background: var(--white);
 }
 
-.hero-image {
-    width: 100%;
-    min-height: 170px;
-    margin-bottom: 28px;
-    border: 1px solid var(--border);
-    background: var(--pastel-blue);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    min-height: 170px;
-    object-fit: cover;
-}
-
-.hero-placeholder {
-    color: var(--blue-text);
-    font-size: 1.4rem;
-    font-weight: 600;
-}
-
-.main-content h1,
-.main-content h2 {
-    color: var(--blue-text);
-}
 
 .main-content h1 {
+
     margin-top: 0;
+
+    color: var(--blue-text);
+
     font-size: 2rem;
 }
 
+
 .main-content h2 {
+
+    color: var(--blue-text);
+
     font-size: 1.45rem;
 }
 
+
 .main-content p {
+
     max-width: 750px;
 }
 
-/* Right sticky content */
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero-image {
+
+    width: 100%;
+
+    min-height: 170px;
+
+    margin-bottom: 28px;
+
+    border: 1px solid var(--border);
+
+    background-color: var(--pastel-blue-light);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+.hero-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    min-height: 170px;
+
+    object-fit: cover;
+}
+
+
+.hero-placeholder {
+
+    color: var(--blue-text);
+
+    font-size: 1.4rem;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   RIGHT STICKY SIDEBAR
+   ========================================================= */
+
 .sticky-sidebar {
-    background: #f4fbfd;
+
+    background-color: var(--pastel-blue);
+
     border-left: 1px solid var(--border);
+
     padding: 28px 18px;
 }
 
+
 .sticky-box {
+
     position: sticky;
+
     top: 20px;
 }
 
+
 .sticky-sidebar h2 {
+
     margin-top: 0;
+
     color: var(--blue-text);
+
     font-size: 1.1rem;
 }
 
+
 .sticky-sidebar a {
+
     display: block;
+
     margin-bottom: 12px;
+
     color: var(--blue-text);
+
     text-decoration: none;
 }
 
+
 .sticky-sidebar a:hover {
+
     text-decoration: underline;
 }
 
-/* Social icons */
+
+/* =========================================================
+   SOCIAL MEDIA LINKS
+   ========================================================= */
+
 .social-links {
+
     display: flex;
+
     gap: 8px;
+
     flex-wrap: wrap;
+
     margin-top: 20px;
 }
 
+
 .social-links a {
+
     width: 35px;
+
     height: 35px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     margin: 0;
+
     border: 1px solid var(--border);
+
     border-radius: 50%;
-    background: var(--pastel-blue);
-    font-weight: 700;
+
+    background-color: var(--pastel-blue-light);
+
+    font-weight: bold;
 }
 
-/* =========================
+
+/* =========================================================
    FOOTER
-   ========================= */
+   ========================================================= */
 
 .site-footer {
+
     border-top: 1px solid var(--border);
-    background: var(--pastel-blue);
+
+    background-color: var(--pastel-blue);
+
     padding: 18px 24px;
+
     text-align: center;
+
     font-size: 0.85rem;
+
     color: var(--blue-text);
 }
 
+
 .site-footer p {
+
     margin: 4px 0;
 }
 
+
 .site-footer a {
+
     color: var(--blue-text);
+
     margin: 0 6px;
 }
 
-/* =========================
-   MOBILE / TABLET
-   ========================= */
+
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 900px) {
+
     .site-shell {
+
         width: 90%;
     }
 
+
     .content-layout {
-        grid-template-columns: 160px minmax(0, 1fr);
+
+        grid-template-columns:
+            160px
+            minmax(0, 1fr);
     }
 
+
     .sticky-sidebar {
+
         display: none;
     }
 
+
     .header-top {
-        grid-template-columns: 150px 1fr;
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .logo-area {
+
+        min-height: 90px;
     }
 }
 
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 650px) {
+
     .site-shell {
+
         width: 94%;
     }
 
-    .header-top {
-        grid-template-columns: 1fr;
-    }
 
-    .logo-area {
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-    }
+    .primary-nav ul {
 
-    .primary-nav ul,
-    .secondary-nav ul {
         flex-direction: column;
+
         text-align: center;
     }
 
+
     .content-layout {
+
         grid-template-columns: 1fr;
     }
 
+
     .left-navigation {
-        border-right: 0;
+
+        border-right: none;
+
         border-bottom: 1px solid var(--border);
     }
 
+
     .main-content {
+
         padding: 22px;
     }
 }
-"""
-
-js = r"""/* =========================================================
-   navigation.js
-   Reusable navigation system for every page of the website.
-
-   Add this to each HTML page:
-       <div id="site-navigation"></div>
-       <script src="navigation.js" defer></script>
-
-   Change the links below to match your actual GitHub Pages
-   filenames if needed.
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const navigationContainer = document.getElementById("site-navigation");
-
-    if (!navigationContainer) {
-        console.error("Navigation container #site-navigation was not found.");
-        return;
-    }
-
-    /* -------------------------
-       Navigation links
-       ------------------------- */
-
-    const primaryLinks = [
-        { name: "About Me", url: "index.html" },
-        { name: "Education", url: "education.html" },
-        { name: "Professional Experience", url: "experience.html" },
-        { name: "Projects", url: "projects.html" },
-        { name: "Contact", url: "contact.html" }
-    ];
-
-    const secondaryLinks = [
-        { name: "Resume", url: "resume.html" },
-        { name: "Skills", url: "skills.html" }
-    ];
-
-    /* -------------------------
-       Create header
-       ------------------------- */
-
-    const header = document.createElement("header");
-    header.className = "site-header";
-
-    header.innerHTML = `
-        <div class="header-top">
-
-            <div class="logo-area">
-                <a href="index.html" aria-label="Home">
-                    Your Name
-                </a>
-            </div>
-
-            <div class="header-info">
-                <p>
-                    Welcome to my personal portfolio website.
-                    Explore my education, experience, projects, and skills.
-                </p>
-            </div>
-
-        </div>
-
-        <nav class="primary-nav" aria-label="Primary navigation">
-            <ul id="primary-navigation"></ul>
-        </nav>
-
-        <nav class="secondary-nav" aria-label="Secondary navigation">
-            <ul id="secondary-navigation"></ul>
-        </nav>
-    `;
-
-    navigationContainer.appendChild(header);
-
-    /* -------------------------
-       Add primary links
-       ------------------------- */
-
-    const primaryNav = document.getElementById("primary-navigation");
-
-    primaryLinks.forEach(function (link) {
-        const listItem = document.createElement("li");
-
-        const anchor = document.createElement("a");
-        anchor.href = link.url;
-        anchor.textContent = link.name;
-
-        listItem.appendChild(anchor);
-        primaryNav.appendChild(listItem);
-    });
-
-    /* -------------------------
-       Add secondary links
-       ------------------------- */
-
-    const secondaryNav = document.getElementById("secondary-navigation");
-
-    secondaryLinks.forEach(function (link) {
-        const listItem = document.createElement("li");
-
-        const anchor = document.createElement("a");
-        anchor.href = link.url;
-        anchor.textContent = link.name;
-
-        listItem.appendChild(anchor);
-        secondaryNav.appendChild(listItem);
-    });
-
-    /* -------------------------
-       Automatically highlight
-       the current page
-       ------------------------- */
-
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-    document.querySelectorAll(".primary-nav a, .secondary-nav a").forEach(function (link) {
-        const linkPage = link.getAttribute("href").split("/").pop();
-
-        if (linkPage === currentPage) {
-            link.classList.add("active");
-            link.setAttribute("aria-current", "page");
-        }
-    });
-
-    /* -------------------------
-       Mobile menu behavior
-       -------------------------
-       The navigation remains visible on desktop.
-       On smaller screens the CSS stacks the links.
-       ------------------------- */
-
-});
-"""
-
-html_example = r"""<!-- Example page structure for your GitHub website -->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Portfolio</title>
-
-    <!-- Your CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Reusable navigation -->
-    <script src="navigation.js" defer></script>
-</head>
-
-<body>
-
-    <div class="site-shell">
-
-        <!-- navigation.js creates the logo/header/navigation here -->
-        <div id="site-navigation"></div>
-
-        <div class="content-layout">
-
-            <!-- LEFT NAVIGATION -->
-            <aside class="left-navigation">
-                <h2>Navigation</h2>
-
-                <ul>
-                    <li><a href="index.html">About Me</a></li>
-                    <li><a href="education.html">Education</a></li>
-                    <li><a href="experience.html">Professional Experience</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                </ul>
-            </aside>
-
-            <!-- MAIN CONTENT -->
-            <main class="main-content">
-
-                <div class="hero-image">
-                    <div class="hero-placeholder">
-                        Hero Image / Portfolio Banner
-                    </div>
-                </div>
-
-                <h1>About Me</h1>
-
-                <p>
-                    This is where your main HTML content goes. You can add
-                    information about yourself, your education, professional
-                    experience, projects, skills, and career goals here.
-                </p>
-
-                <h2>Welcome</h2>
-
-                <p>
-                    Add approximately 400 words of HTML text to this section
-                    if your assignment requires the main content area to
-                    contain substantial written content.
-                </p>
-
-            </main>
-
-            <!-- RIGHT STICKY CONTENT -->
-            <aside class="sticky-sidebar">
-
-                <div class="sticky-box">
-                    <h2>Quick Links</h2>
-
-                    <a href="resume.html">Resume</a>
-                    <a href="projects.html">Projects</a>
-                    <a href="contact.html">Contact</a>
-
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn">in</a>
-                        <a href="#" aria-label="Instagram">ig</a>
-                        <a href="#" aria-label="GitHub">gh</a>
-                    </div>
-                </div>
-
-            </aside>
-
-        </div>
-
-        <!-- FOOTER -->
-        <footer class="site-footer">
-            <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
-
-            <p>
-                <a href="index.html">Home</a> |
-                <a href="contact.html">Contact</a> |
-                <a href="privacy.html">Privacy</a>
-            </p>
-        </footer>
-
-    </div>
-
-    <script>
-        document.getElementById("current-year").textContent =
-            new Date().getFullYear();
-    </script>
-
-</body>
-</html>
-"""
-
-base = Path("/mnt/data")
-css_path = base / "style.css"
-js_path = base / "navigation.js"
-html_path = base / "example-index.html"
-
-css_path.write_text(css, encoding="utf-8")
-js_path.write_text(js, encoding="utf-8")
-html_path.write_text(html_example, encoding="utf-8")
-
-print("Created:")
-print(css_path)
-print(js_path)
-print(html_path)
