@@ -5,6 +5,7 @@
 
 <head>
 
+
     <meta charset="UTF-8">
 
 
@@ -30,13 +31,14 @@
 
 
     <!-- =================================================
-         JAVASCRIPT NAVIGATION
+         JAVASCRIPT
          ================================================= -->
 
     <script
         src="navigation.js"
         defer
     ></script>
+
 
 </head>
 
@@ -46,17 +48,15 @@
 
 
     <!-- =================================================
-         MAIN WEBSITE CONTAINER
+         10% MARGIN ON BOTH SIDES
          ================================================= -->
 
-    <div class="site-shell">
+    <div class="site-container">
+
 
 
         <!-- =================================================
-             NAVIGATION
-
-             JavaScript creates the logo and
-             primary navigation here.
+             HEADER + PRIMARY NAVIGATION
              ================================================= -->
 
         <div id="site-navigation"></div>
@@ -67,7 +67,7 @@
              MAIN THREE-COLUMN LAYOUT
              ================================================= -->
 
-        <div class="content-layout">
+        <div class="main-layout">
 
 
 
@@ -90,6 +90,7 @@
 
                         <a
                             href="index.html"
+                            class="active"
                         >
 
                             About Me
@@ -166,21 +167,23 @@
 
 
 
-                <!-- HERO IMAGE -->
+                <!-- =================================================
+                     HERO IMAGE
+                     ================================================= -->
 
                 <div class="hero-image">
 
 
                     <!--
 
-                    Replace this placeholder with
-                    your own image if you want.
+                    TO ADD AN IMAGE:
 
-                    Example:
+                    Replace everything inside this
+                    div with:
 
                     <img
-                        src="images/my-photo.jpg"
-                        alt="Lauren Bock"
+                        src="images/your-image.jpg"
+                        alt="Description of image"
                     >
 
                     -->
@@ -197,17 +200,14 @@
 
 
 
-                <!-- PAGE HEADING -->
+                <!-- =================================================
+                     ABOUT ME
+                     ================================================= -->
 
                 <h1>
-
                     About Me
-
                 </h1>
 
-
-
-                <!-- ABOUT ME -->
 
                 <p>
 
@@ -236,12 +236,12 @@
 
 
 
-                <!-- EXPERIENCE -->
+                <!-- =================================================
+                     EXPERIENCE
+                     ================================================= -->
 
                 <h2>
-
                     My Experience
-
                 </h2>
 
 
@@ -252,12 +252,30 @@
                     abroad in Florence, Italy. Living abroad
                     allowed me to experience a new culture,
                     meet people from around the world, and
-                    become more independent. I also had the
-                    opportunity to travel throughout Europe
-                    and create memories that I will carry
-                    with me throughout my career.
+                    become more independent.
 
                 </p>
+
+
+                <p>
+
+                    I also had the opportunity to travel
+                    throughout Europe and experience new
+                    places, foods, and cultures. These
+                    experiences helped me become more
+                    confident, adaptable, and open-minded.
+
+                </p>
+
+
+
+                <!-- =================================================
+                     CAREER GOALS
+                     ================================================= -->
+
+                <h2>
+                    Career Goals
+                </h2>
 
 
                 <p>
@@ -273,26 +291,13 @@
                 </p>
 
 
-
-                <!-- CAREER GOALS -->
-
-                <h2>
-
-                    Career Goals
-
-                </h2>
-
-
                 <p>
 
-                    My goal is to work in a position where
-                    I can use my marketing knowledge,
+                    My goal is to use my marketing knowledge,
                     creativity, communication skills, and
-                    passion for fashion and digital media.
-                    I am excited to continue learning,
-                    gaining professional experience, and
-                    building relationships as I begin my
-                    career.
+                    passion for fashion and digital media
+                    in a professional environment where I
+                    can continue learning and growing.
 
                 </p>
 
@@ -305,42 +310,36 @@
                  RIGHT STICKY SIDEBAR
                  ================================================= -->
 
-            <aside class="sticky-sidebar">
+            <aside class="right-sidebar">
 
 
-                <div class="sticky-box">
+                <div class="sticky-content">
 
 
                     <h2>
-
                         Quick Links
-
                     </h2>
 
 
                     <a href="resume.html">
-
                         Resume
-
                     </a>
 
 
                     <a href="projects.html">
-
                         Projects
-
                     </a>
 
 
                     <a href="contact.html">
-
                         Contact
-
                     </a>
 
 
 
-                    <!-- SOCIAL MEDIA -->
+                    <!-- =================================================
+                         SOCIAL MEDIA
+                         ================================================= -->
 
                     <div class="social-links">
 
@@ -349,9 +348,7 @@
                             href="#"
                             aria-label="LinkedIn"
                         >
-
                             in
-
                         </a>
 
 
@@ -359,9 +356,7 @@
                             href="#"
                             aria-label="Instagram"
                         >
-
                             ig
-
                         </a>
 
 
@@ -369,9 +364,7 @@
                             href="#"
                             aria-label="GitHub"
                         >
-
                             gh
-
                         </a>
 
 
@@ -382,6 +375,7 @@
 
 
             </aside>
+
 
 
         </div>
@@ -410,25 +404,19 @@
             <p>
 
                 <a href="index.html">
-
                     Home
-
                 </a>
 
                 |
 
                 <a href="contact.html">
-
                     Contact
-
                 </a>
 
                 |
 
                 <a href="privacy.html">
-
                     Privacy
-
                 </a>
 
             </p>
@@ -437,12 +425,13 @@
         </footer>
 
 
+
     </div>
 
 
 
     <!-- =================================================
-         AUTOMATIC CURRENT YEAR
+         CURRENT YEAR
          ================================================= -->
 
     <script>
