@@ -1,213 +1,455 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Personal Website</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <style>
-
-        /* =========================
-           GENERAL PAGE STYLING
-        ========================= */
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
-            color: #333333;
-        }
+    <title>
+        Lauren Bock | Portfolio
+    </title>
 
 
-        /* =========================
-           NAVIGATION BAR
-        ========================= */
+    <!-- =================================================
+         CONNECT CSS
+         ================================================= -->
 
-        .navigation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-
-            height: 75px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 50px;
-
-            background-color: #ffffff;
-
-            border-bottom: 1px solid #dddddd;
-
-            box-sizing: border-box;
-
-            z-index: 1000;
-        }
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 
-        /* Navigation Links */
+    <!-- =================================================
+         CONNECT JAVASCRIPT
+         ================================================= -->
 
-        .navigation a {
-            color: #333333;
-            text-decoration: none;
-
-            font-size: 16px;
-            font-weight: 500;
-
-            padding: 10px 20px;
-
-            transition: 0.3s;
-        }
-
-
-        /* Navigation Hover */
-
-        .navigation a:hover {
-            color: #777777;
-            text-decoration: underline;
-        }
-
-
-        /* =========================
-           HOME PAGE
-        ========================= */
-
-        main {
-            padding-top: 75px;
-        }
-
-
-        .home {
-            min-height: calc(100vh - 75px);
-
-            display: flex;
-            flex-direction: column;
-
-            justify-content: center;
-            align-items: center;
-
-            text-align: center;
-
-            padding: 40px;
-            box-sizing: border-box;
-        }
-
-
-        /* Main Introduction */
-
-        .home h1 {
-            font-size: 52px;
-            margin: 0 0 15px 0;
-        }
-
-
-        .home h2 {
-            font-size: 24px;
-            font-weight: normal;
-
-            margin: 0 0 20px 0;
-        }
-
-
-        .home p {
-            font-size: 18px;
-
-            max-width: 600px;
-
-            line-height: 1.6;
-
-            margin: 0;
-        }
-
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            text-align: center;
-
-            padding: 25px;
-
-            border-top: 1px solid #dddddd;
-
-            font-size: 14px;
-        }
-
-    </style>
+    <script
+        src="navigation.js"
+        defer
+    ></script>
 
 </head>
+
 
 
 <body>
 
 
-    <!-- =========================
-         JAVASCRIPT NAVIGATION
-    ========================= -->
+    <!-- =================================================
+         MAIN WEBSITE CONTAINER
+         ================================================= -->
+
+    <div class="site-shell">
+
+
+
+        <!-- =================================================
+             JAVASCRIPT NAVIGATION
+
+             navigation.js will automatically create:
+             - Logo
+             - Header description
+             - Primary navigation
+             - Secondary navigation
+             ================================================= -->
+
+        <div id="site-navigation"></div>
+
+
+
+        <!-- =================================================
+             MAIN CONTENT LAYOUT
+             ================================================= -->
+
+        <div class="content-layout">
+
+
+
+            <!-- =================================================
+                 LEFT NAVIGATION
+                 ================================================= -->
+
+            <aside class="left-navigation">
+
+
+                <h2>
+                    Navigation
+                </h2>
+
+
+                <ul>
+
+
+                    <li>
+
+                        <a href="index.html">
+
+                            About Me
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="education.html">
+
+                            Education
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="experience.html">
+
+                            Professional Experience
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="projects.html">
+
+                            Projects
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a href="contact.html">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+
+                </ul>
+
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 MAIN CONTENT
+                 ================================================= -->
+
+            <main class="main-content">
+
+
+
+                <!-- HERO IMAGE -->
+
+                <div class="hero-image">
+
+
+                    <!--
+
+                    To use your own image, replace the
+                    placeholder with:
+
+                    <img
+                        src="images/your-photo.jpg"
+                        alt="Description of your image"
+                    >
+
+                    -->
+
+
+                    <div class="hero-placeholder">
+
+                        Welcome to My Portfolio
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- PAGE TITLE -->
+
+                <h1>
+
+                    About Me
+
+                </h1>
+
+
+
+                <!-- MAIN TEXT -->
+
+                <p>
+
+                    Hi! My name is Lauren Bock, and I am a
+                    senior studying Marketing at Iowa State
+                    University. I am passionate about
+                    marketing, fashion, social media, and
+                    creating meaningful experiences for
+                    consumers.
+
+                </p>
+
+
+
+                <p>
+
+                    Throughout my college experience, I have
+                    developed skills in communication,
+                    teamwork, customer service, creativity,
+                    and problem solving. My coursework has
+                    allowed me to explore different areas of
+                    marketing, including consumer behavior,
+                    professional selling, business
+                    communication, and digital marketing.
+
+                </p>
+
+
+
+                <h2>
+
+                    My Experience
+
+                </h2>
+
+
+
+                <p>
+
+                    One of the most meaningful experiences
+                    during my college career was studying
+                    abroad in Florence, Italy. Living abroad
+                    allowed me to experience a new culture,
+                    meet people from around the world, and
+                    become more independent. I also had the
+                    opportunity to travel throughout Europe
+                    and create memories that I will carry with
+                    me throughout my career.
+
+                </p>
+
+
+
+                <p>
+
+                    I am especially interested in pursuing a
+                    career related to fashion merchandising,
+                    fashion marketing, digital marketing, or
+                    social media. I enjoy combining creativity
+                    with marketing strategy to connect brands
+                    with their target audiences.
+
+                </p>
+
+
+
+                <h2>
+
+                    Career Goals
+
+                </h2>
+
+
+
+                <p>
+
+                    My goal is to work in a position where I
+                    can use my marketing knowledge, creativity,
+                    communication skills, and passion for
+                    fashion and digital media. I am excited to
+                    continue learning, gaining professional
+                    experience, and building relationships as
+                    I begin my career.
+
+                </p>
+
+
+
+            </main>
+
+
+
+            <!-- =================================================
+                 RIGHT STICKY SIDEBAR
+                 ================================================= -->
+
+            <aside class="sticky-sidebar">
+
+
+                <div class="sticky-box">
+
+
+                    <h2>
+
+                        Quick Links
+
+                    </h2>
+
+
+                    <a href="resume.html">
+
+                        Resume
+
+                    </a>
+
+
+                    <a href="projects.html">
+
+                        Projects
+
+                    </a>
+
+
+                    <a href="contact.html">
+
+                        Contact
+
+                    </a>
+
+
+
+                    <!-- SOCIAL MEDIA -->
+
+                    <div class="social-links">
+
+
+                        <a
+                            href="#"
+                            aria-label="LinkedIn"
+                        >
+
+                            in
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            aria-label="Instagram"
+                        >
+
+                            ig
+
+                        </a>
+
+
+                        <a
+                            href="#"
+                            aria-label="GitHub"
+                        >
+
+                            gh
+
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </aside>
+
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer class="site-footer">
+
+
+            <p>
+
+                &copy;
+
+                <span id="current-year"></span>
+
+                Lauren Bock.
+                All rights reserved.
+
+            </p>
+
+
+            <p>
+
+
+                <a href="index.html">
+
+                    Home
+
+                </a>
+
+
+                |
+
+
+                <a href="contact.html">
+
+                    Contact
+
+                </a>
+
+
+                |
+
+
+                <a href="privacy.html">
+
+                    Privacy
+
+                </a>
+
+
+            </p>
+
+
+        </footer>
+
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         CURRENT YEAR SCRIPT
+         ================================================= -->
 
     <script>
 
-        // Create the navigation bar
-        const navigation = document.createElement("nav");
-
-        // Give the navigation its class
-        navigation.className = "navigation";
-
-        // Create the four navigation categories
-        navigation.innerHTML = `
-
-            <a href="index.html">About Me</a>
-
-            <a href="education.html">Education</a>
-
-            <a href="experience.html">Professional Experience</a>
-
-            <a href="involvement.html">Involvement</a>
-
-        `;
-
-        // Add the navigation bar to the website
-        document.body.appendChild(navigation);
+        document.getElementById(
+            "current-year"
+        ).textContent =
+            new Date().getFullYear();
 
     </script>
-
-
-    <!-- =========================
-         HOME PAGE CONTENT
-    ========================= -->
-
-    <main>
-
-        <section class="home">
-
-            <h1>Hi, I'm Lauren! 👋</h1>
-
-            <h2>Welcome to my personal website.</h2>
-
-            <p>
-                Marketing student, traveler, and creative thinker.
-                Get to know me, my experiences, and what inspires me!
-            </p>
-
-        </section>
-
-    </main>
-
-
-    <!-- =========================
-         FOOTER
-    ========================= -->
-
-    <footer>
-
-        <p>© 2026 My Personal Website</p>
-
-    </footer>
 
 
 </body>
