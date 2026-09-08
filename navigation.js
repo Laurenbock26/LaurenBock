@@ -1,6 +1,13 @@
 /* =========================================================
    NAVIGATION.JS
-   Reusable navigation system for all website pages
+
+   Reusable navigation system for all website pages.
+
+   This creates:
+   - Logo
+   - Primary navigation
+
+   Secondary navigation has been removed.
    ========================================================= */
 
 
@@ -8,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FIND THE NAVIGATION CONTAINER
+       FIND NAVIGATION CONTAINER
        ===================================================== */
 
     const navigationContainer =
@@ -29,7 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =====================================================
        PRIMARY NAVIGATION LINKS
 
-       Change the names and filenames here if needed.
+       Change the filenames if your GitHub pages
+       use different names.
        ===================================================== */
 
     const primaryLinks = [
@@ -64,26 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       SECONDARY NAVIGATION LINKS
-       ===================================================== */
-
-    const secondaryLinks = [
-
-        {
-            name: "Resume",
-            url: "resume.html"
-        },
-
-        {
-            name: "Skills",
-            url: "skills.html"
-        }
-
-    ];
-
-
-
-    /* =====================================================
        CREATE HEADER
        ===================================================== */
 
@@ -97,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     header.innerHTML = `
 
-        <!-- LOGO + HEADER DESCRIPTION -->
+        <!-- LOGO -->
 
         <div class="header-top">
 
@@ -114,21 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             </div>
 
-
-            <div class="header-info">
-
-                <p>
-
-                    Welcome to my personal portfolio website.
-                    Explore my education, professional experience,
-                    projects, skills, and career goals.
-
-                </p>
-
-            </div>
-
         </div>
-
 
 
         <!-- PRIMARY NAVIGATION -->
@@ -139,21 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
         >
 
             <ul id="primary-navigation">
-
-            </ul>
-
-        </nav>
-
-
-
-        <!-- SECONDARY NAVIGATION -->
-
-        <nav
-            class="secondary-nav"
-            aria-label="Secondary navigation"
-        >
-
-            <ul id="secondary-navigation">
 
             </ul>
 
@@ -172,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CREATE PRIMARY NAVIGATION
+       CREATE PRIMARY NAVIGATION LINKS
        ===================================================== */
 
     const primaryNav =
@@ -210,51 +169,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       CREATE SECONDARY NAVIGATION
-       ===================================================== */
-
-    const secondaryNav =
-        document.getElementById(
-            "secondary-navigation"
-        );
-
-
-    secondaryLinks.forEach(function (link) {
-
-
-        const listItem =
-            document.createElement("li");
-
-
-        const anchor =
-            document.createElement("a");
-
-
-        anchor.href =
-            link.url;
-
-
-        anchor.textContent =
-            link.name;
-
-
-        listItem.appendChild(anchor);
-
-
-        secondaryNav.appendChild(listItem);
-
-    });
-
-
-
-    /* =====================================================
-       DETERMINE CURRENT PAGE
+       FIND CURRENT PAGE
        ===================================================== */
 
     const currentPage =
         window.location.pathname
-        .split("/")
-        .pop()
+            .split("/")
+            .pop()
         || "index.html";
 
 
@@ -264,9 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
        ===================================================== */
 
     document
-        .querySelectorAll(
-            ".primary-nav a, .secondary-nav a"
-        )
+        .querySelectorAll(".primary-nav a")
         .forEach(function (link) {
 
 
