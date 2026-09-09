@@ -1,19 +1,28 @@
 /* =========================================================
-   style.css
+   STYLE.CSS
+   Personal Portfolio Website
    ========================================================= */
 
-/* ---------- PAGE COLORS ---------- */
+
+/* =========================================================
+   COLORS
+   ========================================================= */
 
 :root {
-    --pastel-blue: #d9eef7;
+    --pastel-blue: #dceff7;
     --pastel-blue-dark: #b8dce9;
-    --pastel-blue-light: #e7f5fa;
-    --text-blue: #28566a;
-    --border-blue: #8db8c7;
+    --blue: #5b9fbd;
+    --dark-blue: #28566a;
+    --light-blue: #f1f8fb;
+    --white: #ffffff;
+    --border: #9fc5d3;
+    --text: #333333;
 }
 
 
-/* ---------- RESET ---------- */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     margin: 0;
@@ -22,80 +31,93 @@
 }
 
 
-/* ---------- ENTIRE PAGE ---------- */
+/* =========================================================
+   BODY
+   ========================================================= */
 
-html,
+html {
+    scroll-behavior: smooth;
+}
+
+
 body {
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+
+    background-color: var(--white);
+
+    color: var(--text);
 
     font-family: Arial, Helvetica, sans-serif;
 
-    background-color: var(--pastel-blue);
-
-    color: var(--text-blue);
+    line-height: 1.6;
 }
 
 
 /* =========================================================
-   10% LEFT + RIGHT MARGIN
+   WEBSITE CONTAINER
+   5% MARGIN ON EACH SIDE
    ========================================================= */
 
 .site-container {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 90%;
+
+    margin-left: 5%;
+    margin-right: 5%;
 
     min-height: 100vh;
 
-    background-color: var(--pastel-blue);
+    background-color: var(--white);
 }
 
 
 /* =========================================================
    HEADER
-   ONLY THE LOGO IS HERE
-   NO TOP-MIDDLE WORDS
    ========================================================= */
 
 .site-header {
     width: 100%;
 
-    background-color: var(--pastel-blue);
+    background-color: var(--white);
 
-    border: 1px solid var(--border-blue);
+    border: 1px solid var(--border);
 }
 
 
-/* Logo row */
+/* =========================================================
+   LOGO AREA
+   ========================================================= */
 
 .logo-row {
     width: 100%;
 
-    min-height: 110px;
+    min-height: 105px;
 
     display: flex;
 
     align-items: center;
 
-    justify-content: flex-start;
-
     padding-left: 30px;
 
-    background-color: var(--pastel-blue);
+    background-color: var(--white);
 }
 
 
-/* Logo */
-
 .logo {
-    color: var(--text-blue);
-
-    font-size: 36px;
-
-    font-weight: 700;
+    color: var(--dark-blue);
 
     text-decoration: none;
+
+    font-size: 34px;
+
+    font-weight: bold;
+}
+
+
+.logo:hover {
+    color: var(--blue);
 }
 
 
@@ -108,9 +130,9 @@ body {
 
     background-color: var(--pastel-blue);
 
-    border-top: 1px solid var(--border-blue);
+    border-top: 1px solid var(--border);
 
-    border-bottom: 1px solid var(--border-blue);
+    border-bottom: 1px solid var(--border);
 }
 
 
@@ -141,15 +163,17 @@ body {
 
     justify-content: center;
 
-    padding: 14px 20px;
+    padding: 13px 20px;
 
-    color: var(--text-blue);
+    color: var(--dark-blue);
 
     text-decoration: none;
 
     font-size: 15px;
 
-    font-weight: 600;
+    font-weight: bold;
+
+    transition: 0.2s ease;
 }
 
 
@@ -159,13 +183,14 @@ body {
 
 
 .primary-navigation a.active {
-    background-color: var(--pastel-blue-dark);
+    background-color: var(--blue);
+
+    color: var(--white);
 }
 
 
 /* =========================================================
-   MAIN PAGE LAYOUT
-   LEFT NAV | MAIN CONTENT | RIGHT SIDEBAR
+   MAIN THREE-COLUMN LAYOUT
    ========================================================= */
 
 .main-layout {
@@ -175,9 +200,12 @@ body {
 
     display: grid;
 
-    grid-template-columns: 190px minmax(0, 1fr) 170px;
+    grid-template-columns:
+        190px
+        minmax(0, 1fr)
+        170px;
 
-    background-color: var(--pastel-blue);
+    background-color: var(--white);
 }
 
 
@@ -186,18 +214,18 @@ body {
    ========================================================= */
 
 .left-navigation {
-    background-color: var(--pastel-blue);
+    background-color: var(--white);
 
-    border-right: 1px solid var(--border-blue);
+    border-right: 1px solid var(--border);
 
     padding: 30px 20px;
 }
 
 
 .left-navigation h2 {
-    color: var(--text-blue);
+    color: var(--dark-blue);
 
-    font-size: 20px;
+    font-size: 19px;
 
     margin-bottom: 20px;
 }
@@ -209,48 +237,90 @@ body {
 
 
 .left-navigation li {
-    margin-bottom: 0;
+    margin-bottom: 8px;
 }
 
 
 .left-navigation a {
     display: block;
 
-    padding: 10px 0;
+    padding: 10px 12px;
 
-    color: var(--text-blue);
+    background-color: var(--pastel-blue);
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    color: var(--dark-blue);
 
     text-decoration: none;
 
-    border-bottom: 1px solid var(--border-blue);
+    font-size: 14px;
 
-    font-size: 15px;
+    transition: 0.2s ease;
 }
 
 
 .left-navigation a:hover {
-    font-weight: bold;
+    background-color: var(--pastel-blue-dark);
 }
 
 
 .left-navigation a.active {
-    font-weight: bold;
+    background-color: var(--blue);
+
+    color: var(--white);
+
+    border-color: var(--blue);
 }
 
 
 /* =========================================================
    MAIN CONTENT
-   EVERYTHING IS PASTEL BLUE
    ========================================================= */
 
 .main-content {
-    background-color: var(--pastel-blue);
+    background-color: var(--white);
 
     padding: 30px;
 }
 
 
-/* ---------- HERO IMAGE ---------- */
+.main-content h1 {
+    color: var(--dark-blue);
+
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+
+.main-content h2 {
+    color: var(--dark-blue);
+
+    font-size: 23px;
+
+    margin-top: 30px;
+
+    margin-bottom: 12px;
+}
+
+
+.main-content p {
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
 
 .hero-image {
     width: 100%;
@@ -259,9 +329,9 @@ body {
 
     margin-bottom: 30px;
 
-    background-color: var(--pastel-blue-light);
+    background-color: var(--light-blue);
 
-    border: 1px solid var(--border-blue);
+    border: 1px solid var(--border);
 
     display: flex;
 
@@ -283,59 +353,24 @@ body {
 
 
 .hero-placeholder {
-    color: var(--text-blue);
+    color: var(--dark-blue);
 
     font-size: 24px;
 
-    font-weight: 600;
+    font-weight: bold;
 
     text-align: center;
 }
 
 
-/* ---------- MAIN HEADINGS ---------- */
-
-.main-content h1 {
-    color: var(--text-blue);
-
-    font-size: 32px;
-
-    margin-bottom: 20px;
-}
-
-
-.main-content h2 {
-    color: var(--text-blue);
-
-    font-size: 23px;
-
-    margin-top: 30px;
-
-    margin-bottom: 12px;
-}
-
-
-/* ---------- MAIN TEXT ---------- */
-
-.main-content p {
-    color: var(--text-blue);
-
-    font-size: 16px;
-
-    line-height: 1.7;
-
-    margin-bottom: 18px;
-}
-
-
 /* =========================================================
-   RIGHT STICKY CONTENT
+   RIGHT SIDEBAR
    ========================================================= */
 
 .right-sidebar {
-    background-color: var(--pastel-blue);
+    background-color: var(--white);
 
-    border-left: 1px solid var(--border-blue);
+    border-left: 1px solid var(--border);
 
     padding: 30px 18px;
 }
@@ -349,34 +384,48 @@ body {
 
 
 .right-sidebar h2 {
-    color: var(--text-blue);
+    color: var(--dark-blue);
 
     font-size: 19px;
 
-    margin-bottom: 20px;
-}
-
-
-.right-sidebar a {
-    display: block;
-
-    color: var(--text-blue);
-
-    text-decoration: none;
-
-    margin-bottom: 14px;
-
-    font-size: 15px;
-}
-
-
-.right-sidebar a:hover {
-    text-decoration: underline;
+    margin-bottom: 18px;
 }
 
 
 /* =========================================================
-   SOCIAL MEDIA
+   RIGHT SIDEBAR BUTTONS
+   ========================================================= */
+
+.right-sidebar > .sticky-content > a {
+    display: block;
+
+    padding: 9px 10px;
+
+    margin-bottom: 10px;
+
+    background-color: var(--pastel-blue);
+
+    border: 1px solid var(--border);
+
+    border-radius: 5px;
+
+    color: var(--dark-blue);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+
+.right-sidebar > .sticky-content > a:hover {
+    background-color: var(--pastel-blue-dark);
+}
+
+
+/* =========================================================
+   SOCIAL MEDIA BUTTONS
    ========================================================= */
 
 .social-links {
@@ -384,7 +433,7 @@ body {
 
     gap: 8px;
 
-    margin-top: 25px;
+    margin-top: 22px;
 }
 
 
@@ -393,25 +442,32 @@ body {
 
     height: 34px;
 
-    margin: 0;
-
     display: flex;
 
     align-items: center;
 
     justify-content: center;
 
-    border: 1px solid var(--border-blue);
+    background-color: var(--pastel-blue);
+
+    border: 1px solid var(--border);
 
     border-radius: 50%;
 
-    background-color: var(--pastel-blue-light);
+    color: var(--dark-blue);
+
+    text-decoration: none;
 
     font-size: 12px;
 
     font-weight: bold;
+}
 
-    text-decoration: none;
+
+.social-links a:hover {
+    background-color: var(--blue);
+
+    color: var(--white);
 }
 
 
@@ -422,15 +478,15 @@ body {
 .site-footer {
     width: 100%;
 
-    background-color: var(--pastel-blue);
+    background-color: var(--white);
 
-    border-top: 1px solid var(--border-blue);
+    border-top: 1px solid var(--border);
 
     padding: 20px;
 
     text-align: center;
 
-    color: var(--text-blue);
+    color: var(--dark-blue);
 }
 
 
@@ -442,15 +498,17 @@ body {
 
 
 .site-footer a {
-    color: var(--text-blue);
-
-    margin: 0 6px;
+    color: var(--dark-blue);
 
     text-decoration: none;
+
+    margin: 0 6px;
 }
 
 
 .site-footer a:hover {
+    color: var(--blue);
+
     text-decoration: underline;
 }
 
@@ -516,7 +574,7 @@ body {
     .primary-navigation a {
         width: 100%;
 
-        border-bottom: 1px solid var(--border-blue);
+        border-bottom: 1px solid var(--border);
     }
 
 
@@ -528,7 +586,7 @@ body {
     .left-navigation {
         border-right: none;
 
-        border-bottom: 1px solid var(--border-blue);
+        border-bottom: 1px solid var(--border);
     }
 
 
