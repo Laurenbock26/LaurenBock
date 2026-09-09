@@ -1,147 +1,96 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================================
-       PAGES
-       ========================================= */
+    /* =========================
+       PAGE INFORMATION
+    ========================= */
 
     const leftPages = [
-        {
-            name: "Home",
-            link: "index.html"
-        },
-        {
-            name: "About Me",
-            link: "about.html"
-        },
-        {
-            name: "Education",
-            link: "education.html"
-        }
+        { name: "Home", link: "index.html" },
+        { name: "About Me", link: "about.html" },
+        { name: "Education", link: "education.html" }
     ];
-
 
     const rightPages = [
-        {
-            name: "Experience",
-            link: "experience.html"
-        },
-        {
-            name: "Projects",
-            link: "projects.html"
-        },
-        {
-            name: "Contact",
-            link: "contact.html"
-        }
+        { name: "Experience", link: "experience.html" },
+        { name: "Projects", link: "projects.html" },
+        { name: "Contact", link: "contact.html" }
     ];
 
-
-    const allPages = [
-        ...leftPages,
-        ...rightPages
-    ];
+    const allPages = [...leftPages, ...rightPages];
 
 
-    /* =========================================
+    /* =========================
        FIND CURRENT PAGE
-       ========================================= */
+    ========================= */
 
-    let currentPage =
-        window.location.pathname.split("/").pop();
+    let currentPage = window.location.pathname.split("/").pop();
 
     if (currentPage === "") {
         currentPage = "index.html";
     }
 
 
-    /* =========================================
-       CREATE TOP NAVIGATION
-       ========================================= */
+    /* =========================
+       TOP NAVIGATION
+    ========================= */
 
-    const navigation =
-        document.getElementById("navigation");
+    const navigation = document.getElementById("navigation");
 
     if (navigation) {
 
         navigation.innerHTML = `
-
             <header class="header">
 
                 <div class="top-navigation">
 
-                    <nav class="top-nav-left">
-                    </nav>
-
+                    <nav class="top-nav-left"></nav>
 
                     <div class="site-name">
                         Lauren Bock
                     </div>
 
-
-                    <nav class="top-nav-right">
-                    </nav>
+                    <nav class="top-nav-right"></nav>
 
                 </div>
 
             </header>
-
         `;
 
 
-        /* =====================================
-           LEFT SIDE OF NAME
-           ===================================== */
+        /* Left side navigation */
 
-        const leftTopNav =
-            document.querySelector(".top-nav-left");
-
+        const leftTopNav = document.querySelector(".top-nav-left");
 
         leftPages.forEach(function (page) {
 
-            const link =
-                document.createElement("a");
+            const link = document.createElement("a");
 
             link.href = page.link;
-
             link.textContent = page.name;
 
-
             if (currentPage === page.link) {
-
                 link.classList.add("active");
-
             }
-
 
             leftTopNav.appendChild(link);
 
         });
 
 
-        /* =====================================
-           RIGHT SIDE OF NAME
-           ===================================== */
+        /* Right side navigation */
 
-        const rightTopNav =
-            document.querySelector(".top-nav-right");
-
+        const rightTopNav = document.querySelector(".top-nav-right");
 
         rightPages.forEach(function (page) {
 
-            const link =
-                document.createElement("a");
+            const link = document.createElement("a");
 
             link.href = page.link;
-
             link.textContent = page.name;
 
-
             if (currentPage === page.link) {
-
                 link.classList.add("active");
-
             }
-
 
             rightTopNav.appendChild(link);
 
@@ -150,80 +99,50 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================================
-       LEFT SIDE NAVIGATION
-       ========================================= */
+    /* =========================
+       LEFT PRIMARY NAVIGATION
+    ========================= */
 
-    const leftNavigation =
-        document.getElementById("left-navigation");
-
+    const leftNavigation = document.getElementById("left-navigation");
 
     if (leftNavigation) {
 
         let leftHTML = `
-
-            <h2>
-                Primary Navigation
-            </h2>
-
+            <h2>Primary Navigation</h2>
             <ul>
-
         `;
-
 
         allPages.forEach(function (page) {
 
             const activeClass =
-                currentPage === page.link
-                    ? "active"
-                    : "";
-
+                currentPage === page.link ? "active" : "";
 
             leftHTML += `
-
                 <li>
-
-                    <a
-                        href="${page.link}"
-                        class="${activeClass}">
-
+                    <a href="${page.link}" class="${activeClass}">
                         ${page.name}
-
                     </a>
-
                 </li>
-
             `;
 
         });
 
-
         leftHTML += `
-
             </ul>
-
         `;
 
-
-        leftNavigation.innerHTML =
-            leftHTML;
-
+        leftNavigation.innerHTML = leftHTML;
     }
 
 
-    /* =========================================
-       CURRENT YEAR
-       ========================================= */
+    /* =========================
+       FOOTER YEAR
+    ========================= */
 
-    const year =
-        document.getElementById("current-year");
-
+    const year = document.getElementById("current-year");
 
     if (year) {
-
-        year.textContent =
-            new Date().getFullYear();
-
+        year.textContent = new Date().getFullYear();
     }
 
 });
