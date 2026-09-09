@@ -1,144 +1,227 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================
-       NAVIGATION LINKS
-       ========================= */
+    /* =========================================
+       WEBSITE PAGES
+       ========================================= */
 
-    const navigationLinks = [
+    const leftPages = [
+        {
+            name: "Home",
+            link: "index.html"
+        },
         {
             name: "About Me",
-            page: "index.html"
+            link: "about.html"
         },
         {
             name: "Education",
-            page: "education.html"
-        },
-        {
-            name: "Professional Experience",
-            page: "experience.html"
-        },
-        {
-            name: "Projects",
-            page: "projects.html"
-        },
-        {
-            name: "Contact",
-            page: "contact.html"
+            link: "education.html"
         }
     ];
 
 
-    /* =========================
-       FIND CURRENT PAGE
-       ========================= */
+    const rightPages = [
+        {
+            name: "Experience",
+            link: "experience.html"
+        },
+        {
+            name: "Projects",
+            link: "projects.html"
+        },
+        {
+            name: "Contact",
+            link: "contact.html"
+        }
+    ];
 
-    let currentPage = window.location.pathname.split("/").pop();
+
+    const allPages = [
+        ...leftPages,
+        ...rightPages
+    ];
+
+
+    /* =========================================
+       CURRENT PAGE
+       ========================================= */
+
+    let currentPage =
+        window.location.pathname.split("/").pop();
 
     if (currentPage === "") {
         currentPage = "index.html";
     }
 
 
-    /* =========================
+    /* =========================================
        TOP NAVIGATION
-       ========================= */
+       ========================================= */
 
-    const navigationContainer =
-        document.getElementById("site-navigation");
+    const navigation =
+        document.getElementById("navigation");
 
-    if (navigationContainer) {
+    if (navigation) {
 
-        const header = document.createElement("header");
-        header.className = "site-header";
+        navigation.innerHTML = `
 
-        /* Logo section ONLY */
-        const logoRow = document.createElement("div");
-        logoRow.className = "logo-row";
+            <header class="header">
 
-        const logo = document.createElement("div");
-        logo.className = "logo";
-        logo.textContent = "Your Name";
+                <div class="top-navigation">
 
-        logoRow.appendChild(logo);
+                    <nav class="top-nav-left">
+
+                    </nav>
 
 
-        /* Primary navigation */
-        const nav = document.createElement("nav");
-        nav.className = "primary-navigation";
+                    <div class="site-name">
+                        Lauren Bock
+                    </div>
 
-        const navList = document.createElement("ul");
 
-        navigationLinks.forEach(function (link) {
+                    <nav class="top-nav-right">
 
-            const listItem = document.createElement("li");
+                    </nav>
 
-            const anchor = document.createElement("a");
+                </div>
 
-            anchor.href = link.page;
-            anchor.textContent = link.name;
 
-            if (currentPage === link.page) {
-                anchor.classList.add("active");
+                <div class="info-area">
+
+                    <p>
+                        This area is for informational graphics
+                        which describe in images what your site is about.
+                    </p>
+
+                </div>
+
+
+                <nav class="secondary-navigation">
+
+                    <ul>
+
+                        <li>
+                            <a href="about.html">
+                                About
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </header>
+
+        `;
+
+
+        /* =========================================
+           CREATE LEFT TOP NAVIGATION
+           ========================================= */
+
+        const leftTopNav =
+            document.querySelector(".top-nav-left");
+
+        leftPages.forEach(function (page) {
+
+            const link =
+                document.createElement("a");
+
+            link.href = page.link;
+            link.textContent = page.name;
+
+            if (currentPage === page.link) {
+                link.classList.add("active");
             }
 
-            listItem.appendChild(anchor);
-            navList.appendChild(listItem);
+            leftTopNav.appendChild(link);
+
         });
 
-        nav.appendChild(navList);
 
-        header.appendChild(logoRow);
-        header.appendChild(nav);
+        /* =========================================
+           CREATE RIGHT TOP NAVIGATION
+           ========================================= */
 
-        navigationContainer.appendChild(header);
+        const rightTopNav =
+            document.querySelector(".top-nav-right");
+
+        rightPages.forEach(function (page) {
+
+            const link =
+                document.createElement("a");
+
+            link.href = page.link;
+            link.textContent = page.name;
+
+            if (currentPage === page.link) {
+                link.classList.add("active");
+            }
+
+            rightTopNav.appendChild(link);
+
+        });
+
     }
 
 
-    /* =========================
-       LEFT NAVIGATION
-       ========================= */
+    /* =========================================
+       LEFT SIDE NAVIGATION
+       ========================================= */
 
     const leftNavigation =
         document.getElementById("left-navigation");
 
     if (leftNavigation) {
 
-        const title = document.createElement("h2");
-        title.textContent = "Navigation";
+        let leftHTML = `
+            <h2>Primary Navigation</h2>
+            <ul>
+        `;
 
-        const list = document.createElement("ul");
+        allPages.forEach(function (page) {
 
-        navigationLinks.forEach(function (link) {
+            const activeClass =
+                currentPage === page.link
+                    ? "active"
+                    : "";
 
-            const listItem = document.createElement("li");
+            leftHTML += `
+                <li>
+                    <a
+                        href="${page.link}"
+                        class="${activeClass}">
+                        ${page.name}
+                    </a>
+                </li>
+            `;
 
-            const anchor = document.createElement("a");
-
-            anchor.href = link.page;
-            anchor.textContent = link.name;
-
-            if (currentPage === link.page) {
-                anchor.classList.add("active");
-            }
-
-            listItem.appendChild(anchor);
-            list.appendChild(listItem);
         });
 
-        leftNavigation.appendChild(title);
-        leftNavigation.appendChild(list);
+        leftHTML += `
+            </ul>
+        `;
+
+        leftNavigation.innerHTML = leftHTML;
     }
 
 
-    /* =========================
+    /* =========================================
        CURRENT YEAR
-       ========================= */
+       ========================================= */
 
-    const yearElement =
+    const year =
         document.getElementById("current-year");
 
-    if (yearElement) {
-        yearElement.textContent = new Date().getFullYear();
+    if (year) {
+        year.textContent =
+            new Date().getFullYear();
     }
 
 });
