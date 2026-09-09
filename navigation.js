@@ -1,224 +1,144 @@
-/* =========================================================
-   navigation.js
-
-   Reusable navigation for ALL pages.
-
-   Includes:
-   - Logo
-   - Primary navigation
-
-   Does NOT include:
-   - Top-middle description
-   - Secondary navigation
-   ========================================================= */
-
-
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =========================
+       NAVIGATION LINKS
+       ========================= */
 
-    /* =====================================================
-       FIND NAVIGATION CONTAINER
-       ===================================================== */
+    const navigationLinks = [
+        {
+            name: "About Me",
+            page: "index.html"
+        },
+        {
+            name: "Education",
+            page: "education.html"
+        },
+        {
+            name: "Professional Experience",
+            page: "experience.html"
+        },
+        {
+            name: "Projects",
+            page: "projects.html"
+        },
+        {
+            name: "Contact",
+            page: "contact.html"
+        }
+    ];
+
+
+    /* =========================
+       FIND CURRENT PAGE
+       ========================= */
+
+    let currentPage = window.location.pathname.split("/").pop();
+
+    if (currentPage === "") {
+        currentPage = "index.html";
+    }
+
+
+    /* =========================
+       TOP NAVIGATION
+       ========================= */
 
     const navigationContainer =
         document.getElementById("site-navigation");
 
+    if (navigationContainer) {
 
-    if (!navigationContainer) {
+        const header = document.createElement("header");
+        header.className = "site-header";
 
-        console.error(
-            "Navigation container was not found."
-        );
+        /* Logo section ONLY */
+        const logoRow = document.createElement("div");
+        logoRow.className = "logo-row";
 
-        return;
+        const logo = document.createElement("div");
+        logo.className = "logo";
+        logo.textContent = "Your Name";
+
+        logoRow.appendChild(logo);
+
+
+        /* Primary navigation */
+        const nav = document.createElement("nav");
+        nav.className = "primary-navigation";
+
+        const navList = document.createElement("ul");
+
+        navigationLinks.forEach(function (link) {
+
+            const listItem = document.createElement("li");
+
+            const anchor = document.createElement("a");
+
+            anchor.href = link.page;
+            anchor.textContent = link.name;
+
+            if (currentPage === link.page) {
+                anchor.classList.add("active");
+            }
+
+            listItem.appendChild(anchor);
+            navList.appendChild(listItem);
+        });
+
+        nav.appendChild(navList);
+
+        header.appendChild(logoRow);
+        header.appendChild(nav);
+
+        navigationContainer.appendChild(header);
     }
 
 
+    /* =========================
+       LEFT NAVIGATION
+       ========================= */
 
-    /* =====================================================
-       PRIMARY NAVIGATION LINKS
-       ===================================================== */
+    const leftNavigation =
+        document.getElementById("left-navigation");
 
-    const navigationLinks = [
+    if (leftNavigation) {
 
-        {
-            name: "About Me",
-            url: "index.html"
-        },
+        const title = document.createElement("h2");
+        title.textContent = "Navigation";
 
-        {
-            name: "Education",
-            url: "education.html"
-        },
+        const list = document.createElement("ul");
 
-        {
-            name: "Professional Experience",
-            url: "experience.html"
-        },
+        navigationLinks.forEach(function (link) {
 
-        {
-            name: "Projects",
-            url: "projects.html"
-        },
+            const listItem = document.createElement("li");
 
-        {
-            name: "Contact",
-            url: "contact.html"
-        }
+            const anchor = document.createElement("a");
 
-    ];
+            anchor.href = link.page;
+            anchor.textContent = link.name;
 
+            if (currentPage === link.page) {
+                anchor.classList.add("active");
+            }
 
+            listItem.appendChild(anchor);
+            list.appendChild(listItem);
+        });
 
-    /* =====================================================
-       CREATE HEADER
-       ===================================================== */
-
-    const header =
-        document.createElement("header");
-
-
-    header.className =
-        "site-header";
-
-
-    /* =====================================================
-       HEADER CONTENT
-
-       ONLY LOGO + PRIMARY NAVIGATION
-       ===================================================== */
-
-    header.innerHTML = `
-
-        <div class="logo-row">
-
-            <a
-                href="index.html"
-                class="logo"
-            >
-
-                Lauren Bock
-
-            </a>
-
-        </div>
-
-
-        <nav
-            class="primary-navigation"
-            aria-label="Primary Navigation"
-        >
-
-            <ul id="primary-navigation-list">
-
-            </ul>
-
-        </nav>
-
-    `;
-
-
-
-    /* =====================================================
-       ADD HEADER TO PAGE
-       ===================================================== */
-
-    navigationContainer.appendChild(header);
-
-
-
-    /* =====================================================
-       CREATE NAVIGATION LINKS
-       ===================================================== */
-
-    const navigationList =
-        document.getElementById(
-            "primary-navigation-list"
-        );
-
-
-    navigationLinks.forEach(function (link) {
-
-
-        const listItem =
-            document.createElement("li");
-
-
-        const anchor =
-            document.createElement("a");
-
-
-        anchor.href =
-            link.url;
-
-
-        anchor.textContent =
-            link.name;
-
-
-        listItem.appendChild(anchor);
-
-
-        navigationList.appendChild(listItem);
-
-    });
-
-
-
-    /* =====================================================
-       DETERMINE CURRENT PAGE
-       ===================================================== */
-
-    let currentPage =
-        window.location.pathname
-            .split("/")
-            .pop();
-
-
-    if (
-        currentPage === ""
-        ||
-        currentPage === "/"
-    ) {
-
-        currentPage =
-            "index.html";
-
+        leftNavigation.appendChild(title);
+        leftNavigation.appendChild(list);
     }
 
 
+    /* =========================
+       CURRENT YEAR
+       ========================= */
 
-    /* =====================================================
-       HIGHLIGHT CURRENT PAGE
-       ===================================================== */
+    const yearElement =
+        document.getElementById("current-year");
 
-    const links =
-        document.querySelectorAll(
-            ".primary-navigation a"
-        );
-
-
-    links.forEach(function (link) {
-
-
-        const linkPage =
-            link
-                .getAttribute("href")
-                .split("/")
-                .pop();
-
-
-        if (linkPage === currentPage) {
-
-            link.classList.add("active");
-
-            link.setAttribute(
-                "aria-current",
-                "page"
-            );
-
-        }
-
-    });
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 
 });
