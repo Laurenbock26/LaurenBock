@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================
-       WEBSITE PAGES
+       PAGES
        ========================================= */
 
     const leftPages = [
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       CURRENT PAGE
+       FIND CURRENT PAGE
        ========================================= */
 
     let currentPage =
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================
-       TOP NAVIGATION
+       CREATE TOP NAVIGATION
        ========================================= */
 
     const navigation =
@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="top-navigation">
 
                     <nav class="top-nav-left">
-
                     </nav>
 
 
@@ -80,53 +79,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     <nav class="top-nav-right">
-
                     </nav>
 
                 </div>
-
-
-                <div class="info-area">
-
-                    <p>
-                        This area is for informational graphics
-                        which describe in images what your site is about.
-                    </p>
-
-                </div>
-
-
-                <nav class="secondary-navigation">
-
-                    <ul>
-
-                        <li>
-                            <a href="about.html">
-                                About
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="contact.html">
-                                Contact
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </nav>
 
             </header>
 
         `;
 
 
-        /* =========================================
-           CREATE LEFT TOP NAVIGATION
-           ========================================= */
+        /* =====================================
+           LEFT SIDE OF NAME
+           ===================================== */
 
         const leftTopNav =
             document.querySelector(".top-nav-left");
+
 
         leftPages.forEach(function (page) {
 
@@ -134,23 +102,29 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.createElement("a");
 
             link.href = page.link;
+
             link.textContent = page.name;
 
+
             if (currentPage === page.link) {
+
                 link.classList.add("active");
+
             }
+
 
             leftTopNav.appendChild(link);
 
         });
 
 
-        /* =========================================
-           CREATE RIGHT TOP NAVIGATION
-           ========================================= */
+        /* =====================================
+           RIGHT SIDE OF NAME
+           ===================================== */
 
         const rightTopNav =
             document.querySelector(".top-nav-right");
+
 
         rightPages.forEach(function (page) {
 
@@ -158,11 +132,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.createElement("a");
 
             link.href = page.link;
+
             link.textContent = page.name;
 
+
             if (currentPage === page.link) {
+
                 link.classList.add("active");
+
             }
+
 
             rightTopNav.appendChild(link);
 
@@ -178,12 +157,19 @@ document.addEventListener("DOMContentLoaded", function () {
     const leftNavigation =
         document.getElementById("left-navigation");
 
+
     if (leftNavigation) {
 
         let leftHTML = `
-            <h2>Primary Navigation</h2>
+
+            <h2>
+                Primary Navigation
+            </h2>
+
             <ul>
+
         `;
+
 
         allPages.forEach(function (page) {
 
@@ -192,23 +178,36 @@ document.addEventListener("DOMContentLoaded", function () {
                     ? "active"
                     : "";
 
+
             leftHTML += `
+
                 <li>
+
                     <a
                         href="${page.link}"
                         class="${activeClass}">
+
                         ${page.name}
+
                     </a>
+
                 </li>
+
             `;
 
         });
 
+
         leftHTML += `
+
             </ul>
+
         `;
 
-        leftNavigation.innerHTML = leftHTML;
+
+        leftNavigation.innerHTML =
+            leftHTML;
+
     }
 
 
@@ -219,9 +218,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const year =
         document.getElementById("current-year");
 
+
     if (year) {
+
         year.textContent =
             new Date().getFullYear();
+
     }
 
 });
