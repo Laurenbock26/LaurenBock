@@ -1,14 +1,15 @@
 /* =========================================================
    navigation.js
 
-   Creates the reusable navigation on every page.
+   Reusable navigation for ALL pages.
 
-   Contains ONLY:
+   Includes:
    - Logo
    - Primary navigation
 
-   There is NO secondary navigation.
-   There is NO top-middle description.
+   Does NOT include:
+   - Top-middle description
+   - Secondary navigation
    ========================================================= */
 
 
@@ -26,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!navigationContainer) {
 
         console.error(
-            "ERROR: #site-navigation was not found."
+            "Navigation container was not found."
         );
 
         return;
@@ -35,10 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       PRIMARY NAVIGATION
-
-       Change these filenames if your pages
-       have different names.
+       PRIMARY NAVIGATION LINKS
        ===================================================== */
 
     const navigationLinks = [
@@ -85,14 +83,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       HEADER HTML
+       HEADER CONTENT
 
-       NOTICE:
-       There is ONLY the logo.
-
-       NO description.
-       NO words in the middle.
-       NO secondary navigation.
+       ONLY LOGO + PRIMARY NAVIGATION
        ===================================================== */
 
     header.innerHTML = `
@@ -173,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       FIND CURRENT PAGE
+       DETERMINE CURRENT PAGE
        ===================================================== */
 
     let currentPage =
@@ -181,9 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
             .split("/")
             .pop();
 
-
-    /* GitHub Pages sometimes gives an empty
-       pathname for the home page. */
 
     if (
         currentPage === ""
@@ -202,13 +192,13 @@ document.addEventListener("DOMContentLoaded", function () {
        HIGHLIGHT CURRENT PAGE
        ===================================================== */
 
-    const allNavigationLinks =
+    const links =
         document.querySelectorAll(
             ".primary-navigation a"
         );
 
 
-    allNavigationLinks.forEach(function (link) {
+    links.forEach(function (link) {
 
 
         const linkPage =
