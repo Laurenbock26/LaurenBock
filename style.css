@@ -10,10 +10,7 @@ body {
     color: #222;
 }
 
-/* =========================
-   MAIN WEBSITE
-========================= */
-
+/* Main website */
 .website {
     width: 90%;
     margin-left: 5%;
@@ -32,34 +29,29 @@ body {
 }
 
 .top-navigation {
-    width: 100%;
-    min-height: 120px;
-
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-
     align-items: center;
+
+    min-height: 120px;
 
     background-color: #fdf1f5;
 
-    border-bottom: 2px solid #800020;
-
     padding: 15px 25px;
+
+    border-bottom: 2px solid #800020;
 }
 
 
-/* =========================
-   LEFT TOP NAVIGATION
-========================= */
+/* Left top navigation */
 
 .top-nav-left {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
 
-    gap: 30px;
+    gap: 25px;
 
-    padding-right: 35px;
+    padding-right: 30px;
 }
 
 .top-nav-left a {
@@ -78,44 +70,48 @@ body {
 
 
 /* =========================
-   NAME
+   LAUREN BOCK
 ========================= */
 
 .site-name {
-    color: #800020 !important;
+    color: #800020;
 
+    /*
+       Elegant calligraphy / script fonts.
+       The browser will use the first available font.
+    */
     font-family:
         "Edwardian Script ITC",
         "Kunstler Script",
         "Snell Roundhand",
-        "Bickham Script Pro",
+        "Segoe Script",
         "Brush Script MT",
-        cursive !important;
+        "Lucida Handwriting",
+        cursive;
 
-    font-size: 62px !important;
+    font-size: 62px;
 
-    font-weight: normal !important;
+    font-weight: normal;
 
     line-height: 1;
 
     text-align: center;
 
     white-space: nowrap;
+
+    padding: 0 25px;
 }
 
 
-/* =========================
-   RIGHT TOP NAVIGATION
-========================= */
+/* Right top navigation */
 
 .top-nav-right {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
 
-    gap: 30px;
+    gap: 25px;
 
-    padding-left: 35px;
+    padding-left: 30px;
 }
 
 .top-nav-right a {
@@ -133,7 +129,7 @@ body {
 }
 
 
-/* ACTIVE NAVIGATION */
+/* Active navigation */
 
 .top-nav-left a.active,
 .top-nav-right a.active {
@@ -167,10 +163,18 @@ body {
 }
 
 
-/* No heading above navigation */
+/*
+   IMPORTANT:
+   There is NO heading here.
+   Only the navigation buttons appear.
+*/
 
 .left-navigation ul {
     list-style: none;
+
+    padding: 0;
+
+    margin: 0;
 }
 
 .left-navigation li {
@@ -180,19 +184,19 @@ body {
 .left-navigation a {
     display: block;
 
-    background-color: #f8dce5;
-
     color: #800020;
 
-    border: 1px solid #800020;
+    background-color: #f8dce5;
 
-    border-radius: 4px;
+    text-decoration: none;
 
     padding: 12px;
 
+    border: 1px solid #800020;
+
     text-align: center;
 
-    text-decoration: none;
+    border-radius: 4px;
 }
 
 .left-navigation a:hover {
@@ -207,7 +211,7 @@ body {
 
 
 /* =========================
-   CENTER CONTENT
+   MAIN CONTENT
 ========================= */
 
 .main-content {
@@ -217,7 +221,7 @@ body {
 }
 
 
-/* HERO IMAGE */
+/* Hero image */
 
 .hero-image {
     width: 70%;
@@ -244,7 +248,7 @@ body {
 }
 
 
-/* CONTENT */
+/* Content */
 
 .content-section {
     margin-bottom: 35px;
@@ -283,9 +287,9 @@ body {
 
     color: #ffffff;
 
-    padding: 10px 20px;
-
     text-decoration: none;
+
+    padding: 10px 20px;
 
     border-radius: 4px;
 }
@@ -336,9 +340,7 @@ body {
 }
 
 
-/* =========================
-   SOCIAL LINKS
-========================= */
+/* Social links */
 
 .social-links {
     border-top: 1px solid #800020;
@@ -349,9 +351,9 @@ body {
 .social-links a {
     display: block;
 
-    color: #800020;
-
     margin-bottom: 10px;
+
+    color: #800020;
 
     text-decoration: none;
 }
@@ -403,8 +405,7 @@ body {
     }
 
     .site-name {
-        font-size: 50px !important;
-
+        font-size: 50px;
         order: -1;
     }
 
@@ -445,17 +446,16 @@ body {
         width: 94%;
 
         margin-left: 3%;
-
         margin-right: 3%;
     }
 
     .site-name {
-        font-size: 42px !important;
+        font-size: 42px;
     }
 
     .top-nav-left,
     .top-nav-right {
-        gap: 15px;
+        gap: 12px;
     }
 
     .top-nav-left a,
