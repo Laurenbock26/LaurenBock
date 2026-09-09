@@ -1,5 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    /* =========================
+       PAGE INFORMATION
+    ========================= */
+
     const leftPages = [
         {
             name: "Home",
@@ -14,6 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "education.html"
         }
     ];
+
 
     const rightPages = [
         {
@@ -30,23 +35,40 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-    const allPages = [...leftPages, ...rightPages];
 
-    let currentPage = window.location.pathname.split("/").pop();
+    const allPages = [
+        ...leftPages,
+        ...rightPages
+    ];
+
+
+    /* =========================
+       CURRENT PAGE
+    ========================= */
+
+    let currentPage =
+        window.location.pathname
+        .split("/")
+        .pop();
+
 
     if (currentPage === "") {
         currentPage = "index.html";
     }
 
+
     /* =========================
        TOP NAVIGATION
-    ========================== */
+    ========================= */
 
-    const navigation = document.getElementById("navigation");
+    const navigation =
+        document.getElementById("navigation");
+
 
     if (navigation) {
 
         navigation.innerHTML = `
+
             <header class="header">
 
                 <div class="top-navigation">
@@ -54,9 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     <nav class="top-nav-left">
                     </nav>
 
+
                     <div class="site-name">
                         Lauren Bock
                     </div>
+
 
                     <nav class="top-nav-right">
                     </nav>
@@ -64,62 +88,97 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
             </header>
+
         `;
 
-        /* LEFT NAVIGATION */
+
+        /* =========================
+           LEFT TOP NAVIGATION
+        ========================= */
 
         const leftTopNav =
-            document.querySelector(".top-nav-left");
+            document.querySelector(
+                ".top-nav-left"
+            );
+
 
         leftPages.forEach(function (page) {
 
             const link =
                 document.createElement("a");
 
+
             link.href = page.link;
+
             link.textContent = page.name;
 
+
             if (currentPage === page.link) {
+
                 link.classList.add("active");
+
             }
 
+
             leftTopNav.appendChild(link);
+
         });
 
-        /* RIGHT NAVIGATION */
+
+        /* =========================
+           RIGHT TOP NAVIGATION
+        ========================= */
 
         const rightTopNav =
-            document.querySelector(".top-nav-right");
+            document.querySelector(
+                ".top-nav-right"
+            );
+
 
         rightPages.forEach(function (page) {
 
             const link =
                 document.createElement("a");
 
+
             link.href = page.link;
+
             link.textContent = page.name;
 
+
             if (currentPage === page.link) {
+
                 link.classList.add("active");
+
             }
 
+
             rightTopNav.appendChild(link);
+
         });
+
     }
+
 
     /* =========================
        LEFT SIDE NAVIGATION
-    ========================== */
+       
+       NO "PRIMARY NAVIGATION"
+       HEADING
+    ========================= */
 
     const leftNavigation =
-        document.getElementById("left-navigation");
+        document.getElementById(
+            "left-navigation"
+        );
+
 
     if (leftNavigation) {
 
         let leftHTML = `
-            <h2>Primary Navigation</h2>
             <ul>
         `;
+
 
         allPages.forEach(function (page) {
 
@@ -128,32 +187,51 @@ document.addEventListener("DOMContentLoaded", function () {
                 ? "active"
                 : "";
 
+
             leftHTML += `
+
                 <li>
-                    <a href="${page.link}" class="${activeClass}">
+
+                    <a
+                        href="${page.link}"
+                        class="${activeClass}"
+                    >
                         ${page.name}
                     </a>
+
                 </li>
+
             `;
+
         });
+
 
         leftHTML += `
             </ul>
         `;
 
-        leftNavigation.innerHTML = leftHTML;
+
+        leftNavigation.innerHTML =
+            leftHTML;
+
     }
+
 
     /* =========================
        FOOTER YEAR
-    ========================== */
+    ========================= */
 
     const year =
-        document.getElementById("current-year");
+        document.getElementById(
+            "current-year"
+        );
+
 
     if (year) {
+
         year.textContent =
             new Date().getFullYear();
+
     }
 
 });
