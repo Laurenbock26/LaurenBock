@@ -10,15 +10,23 @@ body {
     color: #222;
 }
 
-/* WEBSITE */
+/* =========================
+   MAIN WEBSITE
+========================= */
+
 .website {
     width: 90%;
-    margin: 0 5%;
-    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #ffffff;
     min-height: 100vh;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
+
 .header {
     width: 100%;
 }
@@ -26,26 +34,41 @@ body {
 .top-navigation {
     width: 100%;
     min-height: 120px;
+
     display: grid;
     grid-template-columns: 1fr auto 1fr;
+
     align-items: center;
+
     background-color: #fdf1f5;
+
     border-bottom: 2px solid #800020;
+
     padding: 15px 25px;
 }
 
-/* LEFT TOP NAVIGATION */
+
+/* =========================
+   LEFT TOP NAVIGATION
+========================= */
+
 .top-nav-left {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+
     gap: 30px;
+
     padding-right: 35px;
 }
 
 .top-nav-left a {
     color: #800020;
+
     text-decoration: none;
+
     font-size: 17px;
+
     font-weight: bold;
 }
 
@@ -53,29 +76,55 @@ body {
     text-decoration: underline;
 }
 
-/* NAME */
+
+/* =========================
+   NAME
+========================= */
+
 .site-name {
     color: #800020 !important;
-    font-family: "Brush Script MT", "Lucida Handwriting", cursive !important;
-    font-size: 60px !important;
+
+    font-family:
+        "Edwardian Script ITC",
+        "Kunstler Script",
+        "Snell Roundhand",
+        "Bickham Script Pro",
+        "Brush Script MT",
+        cursive !important;
+
+    font-size: 62px !important;
+
     font-weight: normal !important;
+
     line-height: 1;
+
     text-align: center;
+
     white-space: nowrap;
 }
 
-/* RIGHT TOP NAVIGATION */
+
+/* =========================
+   RIGHT TOP NAVIGATION
+========================= */
+
 .top-nav-right {
     display: flex;
     justify-content: flex-start;
+    align-items: center;
+
     gap: 30px;
+
     padding-left: 35px;
 }
 
 .top-nav-right a {
     color: #800020;
+
     text-decoration: none;
+
     font-size: 17px;
+
     font-weight: bold;
 }
 
@@ -83,31 +132,42 @@ body {
     text-decoration: underline;
 }
 
+
 /* ACTIVE NAVIGATION */
+
 .top-nav-left a.active,
 .top-nav-right a.active {
     text-decoration: underline;
 }
 
-/* THREE COLUMN AREA */
+
+/* =========================
+   THREE COLUMN LAYOUT
+========================= */
+
 .main-layout {
     display: grid;
+
     grid-template-columns: 25% 50% 25%;
+
     min-height: 600px;
 }
 
-/* LEFT COLUMN */
+
+/* =========================
+   LEFT NAVIGATION
+========================= */
+
 .left-navigation {
     background-color: #fdf1f5;
+
     padding: 30px 20px;
+
     border-right: 2px solid #800020;
 }
 
-.left-navigation h2 {
-    color: #800020;
-    font-size: 22px;
-    margin-bottom: 20px;
-}
+
+/* No heading above navigation */
 
 .left-navigation ul {
     list-style: none;
@@ -119,45 +179,72 @@ body {
 
 .left-navigation a {
     display: block;
+
     background-color: #f8dce5;
+
     color: #800020;
+
     border: 1px solid #800020;
+
     border-radius: 4px;
+
     padding: 12px;
+
     text-align: center;
+
     text-decoration: none;
 }
 
 .left-navigation a:hover {
-    background-color: white;
+    background-color: #ffffff;
 }
 
 .left-navigation a.active {
-    background-color: white;
+    background-color: #ffffff;
+
     font-weight: bold;
 }
 
-/* CENTER CONTENT */
+
+/* =========================
+   CENTER CONTENT
+========================= */
+
 .main-content {
-    background-color: white;
+    background-color: #ffffff;
+
     padding: 30px;
 }
 
+
+/* HERO IMAGE */
+
 .hero-image {
     width: 70%;
+
     height: 145px;
+
     margin: 0 auto 30px auto;
+
     background-color: #f8dce5;
+
     border: 2px solid #222;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .hero-image p {
     color: #800020;
+
     font-weight: bold;
 }
+
+
+/* CONTENT */
 
 .content-section {
     margin-bottom: 35px;
@@ -166,6 +253,7 @@ body {
 .content-section h1,
 .content-section h2 {
     color: #800020;
+
     margin-bottom: 15px;
 }
 
@@ -179,16 +267,26 @@ body {
 
 .content-section p {
     line-height: 1.7;
+
     margin-bottom: 15px;
 }
 
-/* BUTTON */
+
+/* =========================
+   BUTTON
+========================= */
+
 .button {
     display: inline-block;
+
     background-color: #800020;
-    color: white;
+
+    color: #ffffff;
+
     padding: 10px 20px;
+
     text-decoration: none;
+
     border-radius: 4px;
 }
 
@@ -196,26 +294,36 @@ body {
     background-color: #5f0018;
 }
 
-/* RIGHT SIDEBAR */
+
+/* =========================
+   RIGHT SIDEBAR
+========================= */
+
 .right-sidebar {
-    background-color: white;
+    background-color: #ffffff;
+
     padding: 30px 20px;
+
     border-left: 2px solid #800020;
 }
 
 .sticky-content {
     position: sticky;
+
     top: 20px;
 }
 
 .sticky-content h2 {
     color: #800020;
+
     font-size: 22px;
+
     margin-bottom: 15px;
 }
 
 .sticky-content ul {
     padding-left: 20px;
+
     margin-bottom: 30px;
 }
 
@@ -227,29 +335,51 @@ body {
     color: #800020;
 }
 
+
+/* =========================
+   SOCIAL LINKS
+========================= */
+
 .social-links {
     border-top: 1px solid #800020;
+
     padding-top: 20px;
 }
 
 .social-links a {
     display: block;
+
     color: #800020;
+
     margin-bottom: 10px;
+
     text-decoration: none;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
+
 .footer {
     width: 100%;
+
     background-color: #fdf1f5;
+
     border-top: 2px solid #800020;
+
     padding: 20px;
+
     text-align: center;
+}
+
+.footer p {
+    color: #222;
 }
 
 .footer a {
     color: #800020;
+
     text-decoration: none;
 }
 
@@ -257,24 +387,33 @@ body {
     text-decoration: underline;
 }
 
-/* TABLET */
+
+/* =========================
+   TABLET
+========================= */
+
 @media (max-width: 900px) {
 
     .top-navigation {
         grid-template-columns: 1fr;
+
         gap: 20px;
+
         padding: 20px;
     }
 
     .site-name {
         font-size: 50px !important;
+
         order: -1;
     }
 
     .top-nav-left,
     .top-nav-right {
         justify-content: center;
+
         padding: 0;
+
         flex-wrap: wrap;
     }
 
@@ -284,21 +423,30 @@ body {
 
     .left-navigation {
         border-right: none;
+
         border-bottom: 2px solid #800020;
     }
 
     .right-sidebar {
         border-left: none;
+
         border-top: 2px solid #800020;
     }
 }
 
-/* PHONE */
+
+/* =========================
+   PHONE
+========================= */
+
 @media (max-width: 500px) {
 
     .website {
         width: 94%;
-        margin: 0 3%;
+
+        margin-left: 3%;
+
+        margin-right: 3%;
     }
 
     .site-name {
