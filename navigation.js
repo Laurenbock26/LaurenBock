@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-
     const rightPages = [
         {
             name: "Experience",
@@ -34,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
             link: "contact.html"
         }
     ];
-
 
     const allPages = [
         ...leftPages,
@@ -51,7 +49,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .split("/")
         .pop();
 
-
     if (currentPage === "") {
         currentPage = "index.html";
     }
@@ -64,11 +61,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const navigation =
         document.getElementById("navigation");
 
-
     if (navigation) {
 
         navigation.innerHTML = `
-
             <header class="header">
 
                 <div class="top-navigation">
@@ -76,11 +71,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     <nav class="top-nav-left">
                     </nav>
 
-
                     <div class="site-name">
                         Lauren Bock
                     </div>
-
 
                     <nav class="top-nav-right">
                     </nav>
@@ -88,75 +81,51 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
 
             </header>
-
         `;
 
 
-        /* =========================
-           LEFT TOP NAVIGATION
-        ========================= */
+        /* LEFT TOP NAVIGATION */
 
         const leftTopNav =
-            document.querySelector(
-                ".top-nav-left"
-            );
-
+            document.querySelector(".top-nav-left");
 
         leftPages.forEach(function (page) {
 
             const link =
                 document.createElement("a");
 
-
             link.href = page.link;
 
             link.textContent = page.name;
 
-
             if (currentPage === page.link) {
-
                 link.classList.add("active");
-
             }
 
-
             leftTopNav.appendChild(link);
-
         });
 
 
-        /* =========================
-           RIGHT TOP NAVIGATION
-        ========================= */
+        /* RIGHT TOP NAVIGATION */
 
         const rightTopNav =
-            document.querySelector(
-                ".top-nav-right"
-            );
-
+            document.querySelector(".top-nav-right");
 
         rightPages.forEach(function (page) {
 
             const link =
                 document.createElement("a");
 
-
             link.href = page.link;
 
             link.textContent = page.name;
 
-
             if (currentPage === page.link) {
-
                 link.classList.add("active");
-
             }
 
-
             rightTopNav.appendChild(link);
-
         });
-
     }
 
 
@@ -168,10 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ========================= */
 
     const leftNavigation =
-        document.getElementById(
-            "left-navigation"
-        );
-
+        document.getElementById("left-navigation");
 
     if (leftNavigation) {
 
@@ -179,41 +145,31 @@ document.addEventListener("DOMContentLoaded", function () {
             <ul>
         `;
 
-
         allPages.forEach(function (page) {
 
             const activeClass =
                 currentPage === page.link
-                ? "active"
-                : "";
-
+                    ? "active"
+                    : "";
 
             leftHTML += `
-
                 <li>
-
                     <a
                         href="${page.link}"
                         class="${activeClass}"
                     >
                         ${page.name}
                     </a>
-
                 </li>
-
             `;
-
         });
-
 
         leftHTML += `
             </ul>
         `;
 
-
         leftNavigation.innerHTML =
             leftHTML;
-
     }
 
 
@@ -222,16 +178,12 @@ document.addEventListener("DOMContentLoaded", function () {
     ========================= */
 
     const year =
-        document.getElementById(
-            "current-year"
-        );
-
+        document.getElementById("current-year");
 
     if (year) {
 
         year.textContent =
             new Date().getFullYear();
-
     }
 
 });
