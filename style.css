@@ -24,7 +24,7 @@ body {
 
 
 /* =========================
-   MAIN WEBSITE
+   WEBSITE
 ========================= */
 
 .website {
@@ -34,9 +34,9 @@ body {
     margin-left: 5%;
     margin-right: 5%;
 
-    background-color: #800020;
-
     min-height: 100vh;
+
+    background-color: #800020;
 
 }
 
@@ -65,19 +65,17 @@ body {
 
     min-height: 125px;
 
-    background-color: #800020;
-
     padding:
-        15px 25px;
+        20px 30px;
 
     border-bottom:
-        2px solid #f8dce5;
+        1px solid #f8dce5;
 
 }
 
 
 /* =========================
-   LEFT NAVIGATION
+   LEFT TOP LINKS
 ========================= */
 
 .top-nav-left {
@@ -88,7 +86,7 @@ body {
 
     align-items: center;
 
-    gap: 35px;
+    gap: 28px;
 
     padding-right: 35px;
 
@@ -101,7 +99,12 @@ body {
 
     text-decoration: none;
 
-    font-size: 18px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 16px;
 
     font-weight: normal;
 
@@ -116,7 +119,7 @@ body {
 
 
 /* =========================
-   LAUREN BOCK
+   NAME
 ========================= */
 
 .site-name {
@@ -132,7 +135,7 @@ body {
         "Lucida Handwriting",
         cursive;
 
-    font-size: 64px;
+    font-size: 66px;
 
     font-weight: normal;
 
@@ -143,13 +146,13 @@ body {
     white-space: nowrap;
 
     padding:
-        0 25px;
+        0 20px;
 
 }
 
 
 /* =========================
-   RIGHT NAVIGATION
+   RIGHT TOP LINKS
 ========================= */
 
 .top-nav-right {
@@ -160,7 +163,7 @@ body {
 
     align-items: center;
 
-    gap: 35px;
+    gap: 28px;
 
     padding-left: 35px;
 
@@ -173,7 +176,12 @@ body {
 
     text-decoration: none;
 
-    font-size: 18px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 16px;
 
     font-weight: normal;
 
@@ -187,9 +195,7 @@ body {
 }
 
 
-/* =========================
-   ACTIVE NAVIGATION
-========================= */
+/* ACTIVE LINK */
 
 .top-nav-left a.active,
 .top-nav-right a.active {
@@ -200,7 +206,7 @@ body {
 
 
 /* =========================
-   HOME PAGE LAYOUT
+   THREE-PART HOME LAYOUT
 ========================= */
 
 .home-layout {
@@ -208,34 +214,32 @@ body {
     display: grid;
 
     grid-template-columns:
-        30%
-        40%
-        30%;
-
-    gap: 0;
-
-    padding:
-        30px 3% 25px 3%;
+        27%
+        46%
+        27%;
 
     align-items: stretch;
+
+    padding:
+        35px 3% 40px 3%;
 
 }
 
 
 /* =========================
-   SIDE PHOTOS
+   PHOTOS
 ========================= */
 
 .side-photo {
 
-    width: 100%;
-
-    height: 750px;
+    height: 700px;
 
     overflow: hidden;
 
 }
 
+
+/* IMAGE ITSELF */
 
 .side-photo img {
 
@@ -243,16 +247,22 @@ body {
 
     height: 100%;
 
-    object-fit: cover;
-
     display: block;
+
+    object-fit: cover;
 
 }
 
 
 /* =========================
-   LEFT PHOTO
+   LEFT IMAGE CROPPING
 ========================= */
+
+/*
+   This slightly zooms/crops the left
+   photo so it has the same tall,
+   editorial appearance as the mockup.
+*/
 
 .left-photo {
 
@@ -261,8 +271,17 @@ body {
 }
 
 
+.left-photo img {
+
+    object-position: center center;
+
+    transform: scale(1.08);
+
+}
+
+
 /* =========================
-   RIGHT PHOTO
+   RIGHT IMAGE
 ========================= */
 
 .right-photo {
@@ -272,80 +291,91 @@ body {
 }
 
 
+.right-photo img {
+
+    object-position: center center;
+
+}
+
+
 /* =========================
-   MAIN CONTENT
+   CENTER CONTENT
 ========================= */
 
 .main-content {
 
-    width: 100%;
-
     padding:
-        5px 25px;
+        5px 30px;
 
 }
 
 
-/* =========================
-   CONTENT SECTIONS
-========================= */
-
-.content-section {
-
-    margin-bottom: 35px;
-
-}
-
-
-.content-section h1,
-.content-section h2 {
+.main-content h1 {
 
     color: #f8dce5;
 
-    margin-bottom: 18px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 32px;
 
     font-weight: normal;
 
-}
-
-
-.content-section h1 {
-
-    font-size: 34px;
+    margin-bottom: 22px;
 
 }
 
 
-.content-section h2 {
-
-    font-size: 29px;
-
-}
-
-
-.content-section p {
+.main-content p {
 
     color: #f8dce5;
 
-    font-size: 18px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    line-height: 1.65;
+    font-size: 17px;
 
-    margin-bottom: 18px;
+    line-height: 1.7;
+
+    margin-bottom: 20px;
 
 }
 
 
 /* =========================
-   DIVIDER
+   ABOUT ME
 ========================= */
 
-.content-section + .content-section {
+.about-section {
 
     border-top:
         1px solid #f8dce5;
 
-    padding-top: 25px;
+    margin-top: 35px;
+
+    padding-top: 28px;
+
+}
+
+
+.about-section h2 {
+
+    color: #f8dce5;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+
+    font-weight: normal;
+
+    margin-bottom: 18px;
 
 }
 
@@ -362,14 +392,19 @@ body {
 
     color: #800020;
 
+    padding:
+        10px 24px;
+
+    border-radius: 7px;
+
     text-decoration: none;
 
-    padding:
-        11px 25px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-    border-radius: 8px;
-
-    font-size: 17px;
+    font-size: 16px;
 
     font-weight: bold;
 
@@ -389,15 +424,11 @@ body {
 
 .footer {
 
-    width: 100%;
-
-    background-color: #800020;
-
     border-top:
-        2px solid #f8dce5;
+        1px solid #f8dce5;
 
     padding:
-        20px;
+        22px;
 
     text-align: center;
 
@@ -408,7 +439,12 @@ body {
 
     color: #f8dce5;
 
-    font-size: 15px;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
 
 }
 
@@ -441,8 +477,6 @@ body {
 
         gap: 20px;
 
-        padding: 25px;
-
     }
 
 
@@ -463,8 +497,6 @@ body {
         padding:
             0;
 
-        gap: 20px;
-
         flex-wrap: wrap;
 
     }
@@ -477,37 +509,12 @@ body {
             50%
             25%;
 
-        padding:
-            25px 2%;
-
     }
 
 
     .side-photo {
 
         height: 600px;
-
-    }
-
-
-    .left-photo {
-
-        padding-right: 15px;
-
-    }
-
-
-    .right-photo {
-
-        padding-left: 15px;
-
-    }
-
-
-    .main-content {
-
-        padding:
-            5px 15px;
 
     }
 
@@ -538,22 +545,6 @@ body {
     }
 
 
-    .top-nav-left,
-    .top-nav-right {
-
-        gap: 12px;
-
-    }
-
-
-    .top-nav-left a,
-    .top-nav-right a {
-
-        font-size: 15px;
-
-    }
-
-
     .home-layout {
 
         display: flex;
@@ -561,7 +552,7 @@ body {
         flex-direction: column;
 
         padding:
-            20px;
+            25px;
 
     }
 
@@ -592,7 +583,7 @@ body {
         order: 2;
 
         padding:
-            0;
+            10px 0;
 
     }
 
@@ -601,30 +592,17 @@ body {
 
         order: 3;
 
-        padding: 0;
+        padding:
+            0;
 
         margin-top: 10px;
 
     }
 
 
-    .content-section h1 {
+    .left-photo img {
 
-        font-size: 28px;
-
-    }
-
-
-    .content-section h2 {
-
-        font-size: 24px;
-
-    }
-
-
-    .content-section p {
-
-        font-size: 16px;
+        transform: scale(1.05);
 
     }
 
