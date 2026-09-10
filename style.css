@@ -1,3 +1,7 @@
+/* ========================================
+   RESET
+======================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,78 +9,122 @@
 }
 
 
-/* =========================
-   COLORS
-========================= */
+/* ========================================
+   BODY
+======================================== */
 
 body {
+
     background-color: #800020;
+
     color: #f8dce5;
-    font-family: Georgia, "Times New Roman", serif;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
 }
 
 
-/* =========================
+/* ========================================
    WEBSITE
-========================= */
+======================================== */
 
 .website {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: 5%;
+
+    width: 100%;
+
     min-height: 100vh;
+
     background-color: #800020;
+
 }
 
 
-/* =========================
+/* ========================================
    HEADER
-========================= */
+======================================== */
 
 .header {
+
     width: 100%;
+
 }
+
 
 .top-navigation {
+
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
     align-items: center;
-    min-height: 125px;
-    padding: 20px 30px;
-    border-bottom: 1px solid #f8dce5;
+
+    height: 131px;
+
+    padding:
+        15px
+        8%;
+
+    border-bottom:
+        2px solid
+        #f8dce5;
+
 }
 
 
-/* =========================
-   LEFT TOP NAVIGATION
-========================= */
+/* ========================================
+   LEFT NAVIGATION
+======================================== */
 
 .top-nav-left {
+
     display: flex;
-    justify-content: flex-end;
+
+    justify-content: flex-start;
+
     align-items: center;
-    gap: 28px;
-    padding-right: 35px;
+
+    gap: 55px;
+
 }
+
 
 .top-nav-left a {
+
     color: #f8dce5;
+
     text-decoration: none;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 20px;
+
     font-weight: normal;
+
 }
+
 
 .top-nav-left a:hover {
+
     text-decoration: underline;
+
 }
 
 
-/* =========================
+/* ========================================
    LAUREN BOCK
-========================= */
+======================================== */
 
 .site-name {
+
     color: #f8dce5;
 
     font-family:
@@ -88,149 +136,203 @@ body {
         "Lucida Handwriting",
         cursive;
 
-    font-size: 66px;
+    font-size: 76px;
+
     font-weight: normal;
+
     line-height: 1;
+
     text-align: center;
+
     white-space: nowrap;
-    padding: 0 20px;
+
+    padding:
+        0
+        35px;
+
 }
 
 
-/* =========================
-   RIGHT TOP NAVIGATION
-========================= */
+/* ========================================
+   RIGHT NAVIGATION
+======================================== */
 
 .top-nav-right {
+
     display: flex;
-    justify-content: flex-start;
+
+    justify-content: flex-end;
+
     align-items: center;
-    gap: 28px;
-    padding-left: 35px;
+
+    gap: 55px;
+
 }
+
 
 .top-nav-right a {
+
     color: #f8dce5;
+
     text-decoration: none;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 20px;
+
     font-weight: normal;
+
 }
+
 
 .top-nav-right a:hover {
+
     text-decoration: underline;
+
 }
 
 
-/* ACTIVE LINK */
+/* ========================================
+   ACTIVE PAGE
+======================================== */
 
 .top-nav-left a.active,
 .top-nav-right a.active {
+
     text-decoration: underline;
+
+    text-decoration-thickness: 2px;
+
+    text-underline-offset: 7px;
+
 }
 
 
-/* =========================
-   HOME PAGE LAYOUT
-========================= */
+/* ========================================
+   HOME PAGE
+======================================== */
 
 .home-layout {
+
     display: grid;
 
-    /* Left photo | Main content | Right photo */
-    grid-template-columns: 27% 46% 27%;
+    /*
+       LEFT IMAGE
+       CENTER CONTENT
+       RIGHT IMAGE
+    */
+
+    grid-template-columns:
+        1fr
+        1.12fr
+        1fr;
+
+    column-gap: 50px;
 
     align-items: stretch;
 
-    padding: 35px 3% 40px 3%;
+    padding:
+        30px
+        3%
+        24px
+        3%;
+
 }
 
 
-/* =========================
-   SIDE PHOTOS
-========================= */
+/* ========================================
+   IMAGES
+======================================== */
 
 .side-photo {
+
     width: 100%;
-    height: 700px;
+
+    height: 753px;
+
     overflow: hidden;
+
 }
 
 
-/* =========================
-   BOTH IMAGES
-========================= */
-
 .side-photo img {
+
     width: 100%;
+
     height: 100%;
+
     display: block;
 
     object-fit: cover;
+
 }
 
 
-/* =========================
-   LEFT PHOTO
-========================= */
-
-/* 
-   The left image is slightly zoomed
-   so the edges are cropped.
-*/
+/* ========================================
+   LEFT IMAGE
+======================================== */
 
 .left-photo {
-    padding-right: 25px;
-    overflow: hidden;
+
+    padding: 0;
+
 }
+
 
 .left-photo img {
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
-
-    /* This is what crops the photo */
-    transform: scale(1.20);
-
-    /* Keeps the subject centered */
     object-position: center center;
+
+    /*
+       Crop the left photo
+       to match the reference.
+    */
+
+    transform: scale(1.04);
+
 }
 
 
-/* =========================
-   RIGHT PHOTO
-========================= */
+/* ========================================
+   RIGHT IMAGE
+======================================== */
 
 .right-photo {
-    padding-left: 25px;
+
+    padding: 0;
+
 }
+
 
 .right-photo img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
 
     object-position: center center;
+
 }
 
 
-/* =========================
+/* ========================================
    MAIN CONTENT
-========================= */
+======================================== */
 
 .main-content {
-    width: 100%;
-    padding: 5px 30px;
+
+    padding:
+        4px
+        0;
+
 }
 
 
-/* =========================
+/* ========================================
    MAIN HEADING
-========================= */
+======================================== */
 
 .main-content h1 {
+
     color: #f8dce5;
 
     font-family:
@@ -238,73 +340,100 @@ body {
         "Times New Roman",
         serif;
 
-    font-size: 32px;
+    font-size: 39px;
+
     font-weight: normal;
 
-    margin-bottom: 22px;
-}
-
-
-/* =========================
-   MAIN TEXT
-========================= */
-
-.main-content p {
-    color: #f8dce5;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 17px;
-    line-height: 1.7;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================
-   ABOUT ME
-========================= */
-
-.about-section {
-    border-top: 1px solid #f8dce5;
-
-    margin-top: 35px;
-
-    padding-top: 28px;
-}
-
-.about-section h2 {
-    color: #f8dce5;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
-    font-size: 27px;
-    font-weight: normal;
+    line-height: 1.2;
 
     margin-bottom: 18px;
+
 }
 
 
-/* =========================
-   BUTTON
-========================= */
+/* ========================================
+   MAIN PARAGRAPHS
+======================================== */
+
+.main-content p {
+
+    color: #f8dce5;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.32;
+
+    margin-bottom: 21px;
+
+}
+
+
+/* ========================================
+   ABOUT ME
+======================================== */
+
+.about-section {
+
+    border-top:
+        2px solid
+        #f8dce5;
+
+    margin-top: 27px;
+
+    padding-top: 27px;
+
+}
+
+
+.about-section h2 {
+
+    color: #f8dce5;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 35px;
+
+    font-weight: normal;
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+
+}
+
+
+.about-section p {
+
+    margin-bottom: 27px;
+
+}
+
+
+/* ========================================
+   LEARN MORE BUTTON
+======================================== */
 
 .button {
+
     display: inline-block;
 
     background-color: #f8dce5;
 
     color: #800020;
 
-    padding: 10px 24px;
+    padding:
+        11px
+        29px;
 
-    border-radius: 7px;
+    border-radius: 10px;
 
     text-decoration: none;
 
@@ -313,29 +442,43 @@ body {
         "Times New Roman",
         serif;
 
-    font-size: 16px;
+    font-size: 19px;
 
     font-weight: bold;
+
 }
+
 
 .button:hover {
+
     background-color: #ffffff;
+
 }
 
 
-/* =========================
+/* ========================================
    FOOTER
-========================= */
+======================================== */
 
 .footer {
-    border-top: 1px solid #f8dce5;
 
-    padding: 22px;
+    width: 100%;
+
+    border-top:
+        2px solid
+        #f8dce5;
+
+    padding:
+        18px
+        20px;
 
     text-align: center;
+
 }
 
+
 .footer p {
+
     color: #f8dce5;
 
     font-family:
@@ -343,97 +486,217 @@ body {
         "Times New Roman",
         serif;
 
-    font-size: 14px;
+    font-size: 15px;
+
 }
+
 
 .footer a {
+
     color: #f8dce5;
+
     text-decoration: none;
+
 }
+
 
 .footer a:hover {
+
     text-decoration: underline;
+
 }
 
 
-/* =========================
+/* ========================================
    TABLET
-========================= */
+======================================== */
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
 
     .top-navigation {
-        grid-template-columns: 1fr;
-        gap: 20px;
+
+        padding:
+            15px
+            4%;
+
     }
 
-    .site-name {
-        order: -1;
-        font-size: 55px;
-    }
 
     .top-nav-left,
     .top-nav-right {
-        justify-content: center;
-        padding: 0;
-        flex-wrap: wrap;
+
+        gap: 25px;
+
     }
+
+
+    .top-nav-left a,
+    .top-nav-right a {
+
+        font-size: 17px;
+
+    }
+
+
+    .site-name {
+
+        font-size: 60px;
+
+        padding:
+            0
+            15px;
+
+    }
+
 
     .home-layout {
-        grid-template-columns: 25% 50% 25%;
+
+        grid-template-columns:
+            1fr
+            1.1fr
+            1fr;
+
+        column-gap: 25px;
+
     }
 
-    .side-photo {
-        height: 600px;
+
+    .main-content h1 {
+
+        font-size: 32px;
+
     }
+
+
+    .main-content p {
+
+        font-size: 17px;
+
+    }
+
 }
 
 
-/* =========================
-   PHONE
-========================= */
+/* ========================================
+   MOBILE
+======================================== */
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 
-    .website {
-        width: 94%;
-        margin-left: 3%;
-        margin-right: 3%;
+    .top-navigation {
+
+        display: flex;
+
+        flex-direction: column;
+
+        height: auto;
+
+        padding:
+            25px
+            15px;
+
+        gap: 20px;
+
     }
+
 
     .site-name {
-        font-size: 45px;
+
+        order: -1;
+
+        font-size: 48px;
+
     }
+
+
+    .top-nav-left,
+    .top-nav-right {
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+
+        gap: 20px;
+
+    }
+
+
+    .top-nav-left a,
+    .top-nav-right a {
+
+        font-size: 16px;
+
+    }
+
 
     .home-layout {
+
         display: flex;
+
         flex-direction: column;
-        padding: 25px;
+
+        padding:
+            25px;
+
     }
+
 
     .side-photo {
+
         width: 100%;
-        height: 450px;
-        padding: 0;
+
+        height: 500px;
+
         margin-bottom: 25px;
+
     }
+
 
     .left-photo {
+
         order: 1;
+
     }
+
 
     .main-content {
+
         order: 2;
-        padding: 10px 0;
+
+        padding: 0;
+
     }
+
 
     .right-photo {
+
         order: 3;
-        padding: 0;
+
         margin-top: 10px;
+
     }
 
-    .left-photo img {
-        transform: scale(1.15);
+
+    .main-content h1 {
+
+        font-size: 30px;
+
     }
+
+
+    .main-content p {
+
+        font-size: 17px;
+
+    }
+
+
+    .footer {
+
+        padding:
+            18px
+            10px;
+
+    }
+
 }
