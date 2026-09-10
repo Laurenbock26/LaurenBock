@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       LEFT SIDE NAVIGATION
+       LEFT NAVIGATION LINKS
     ========================== */
 
     const leftPages = [
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       RIGHT SIDE NAVIGATION
+       RIGHT NAVIGATION LINKS
     ========================== */
 
     const rightPages = [
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       TOP NAVIGATION
+       CREATE TOP NAVIGATION
     ========================== */
 
     const navigation =
@@ -83,22 +83,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="top-navigation">
 
 
-                    <!-- LEFT LINKS -->
-
                     <nav class="top-nav-left">
                     </nav>
 
 
-                    <!-- NAME -->
-
                     <div class="site-name">
-
                         Lauren Bock
-
                     </div>
 
-
-                    <!-- RIGHT LINKS -->
 
                     <nav class="top-nav-right">
                     </nav>
@@ -112,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =========================
-           ADD LEFT LINKS
+           LEFT LINKS
         ========================== */
 
         const leftTopNav =
@@ -152,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =========================
-           ADD RIGHT LINKS
+           RIGHT LINKS
         ========================== */
 
         const rightTopNav =
