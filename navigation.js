@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =========================
-       LEFT NAVIGATION LINKS
-    ========================== */
+    /* ========================================
+       LEFT NAVIGATION
+    ======================================== */
 
     const leftPages = [
 
@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
 
-    /* =========================
-       RIGHT NAVIGATION LINKS
-    ========================== */
+    /* ========================================
+       RIGHT NAVIGATION
+    ======================================== */
 
     const rightPages = [
 
@@ -49,9 +49,9 @@ document.addEventListener("DOMContentLoaded", function () {
     ];
 
 
-    /* =========================
-       CURRENT PAGE
-    ========================== */
+    /* ========================================
+       FIND CURRENT PAGE
+    ======================================== */
 
     let currentPage =
         window.location.pathname
@@ -66,15 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
-       CREATE TOP NAVIGATION
-    ========================== */
+    /* ========================================
+       CREATE NAVIGATION
+    ======================================== */
 
     const navigation =
         document.getElementById("navigation");
 
 
     if (navigation) {
+
 
         navigation.innerHTML = `
 
@@ -84,15 +85,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     <nav class="top-nav-left">
+
                     </nav>
 
 
                     <div class="site-name">
+
                         Lauren Bock
+
                     </div>
 
 
                     <nav class="top-nav-right">
+
                     </nav>
 
 
@@ -103,9 +108,9 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
 
 
-        /* =========================
+        /* ========================================
            LEFT LINKS
-        ========================== */
+        ======================================== */
 
         const leftTopNav =
             document.querySelector(
@@ -115,6 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         leftPages.forEach(function (page) {
 
+
             const link =
                 document.createElement("a");
 
@@ -131,9 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentPage === page.link
             ) {
 
-                link.classList.add(
-                    "active"
-                );
+                link.classList.add("active");
 
             }
 
@@ -143,9 +147,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* =========================
+        /* ========================================
            RIGHT LINKS
-        ========================== */
+        ======================================== */
 
         const rightTopNav =
             document.querySelector(
@@ -154,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         rightPages.forEach(function (page) {
+
 
             const link =
                 document.createElement("a");
@@ -171,9 +176,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentPage === page.link
             ) {
 
-                link.classList.add(
-                    "active"
-                );
+                link.classList.add("active");
 
             }
 
@@ -185,9 +188,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =========================
+    /* ========================================
        FOOTER YEAR
-    ========================== */
+    ======================================== */
 
     const year =
         document.getElementById(
