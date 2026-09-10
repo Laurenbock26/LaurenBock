@@ -22,6 +22,7 @@ body {
     background: #800020;
 }
 
+
 /* =========================
    HEADER / NAVIGATION
    ========================= */
@@ -44,8 +45,6 @@ body {
     border-bottom: 2px solid #f8dce5;
 }
 
-/* Left Navigation */
-
 .top-nav-left {
     display: flex;
     align-items: center;
@@ -65,8 +64,6 @@ body {
     text-decoration: underline;
 }
 
-/* Lauren Bock Header */
-
 .site-name {
     color: #f8dce5;
     font-family: "Ballet", cursive;
@@ -77,8 +74,6 @@ body {
     text-align: center;
     padding: 0 32px;
 }
-
-/* Right Navigation */
 
 .top-nav-right {
     display: flex;
@@ -98,8 +93,6 @@ body {
 .top-nav-right a:hover {
     text-decoration: underline;
 }
-
-/* Active Page */
 
 .top-nav-left a.active,
 .top-nav-right a.active {
@@ -128,6 +121,7 @@ body {
     padding-bottom: 24px;
 }
 
+
 /* Photos */
 
 .side-photo {
@@ -143,8 +137,6 @@ body {
     object-fit: cover;
 }
 
-/* Left Photo */
-
 .left-photo {
     width: 432px;
     height: 753px;
@@ -157,8 +149,6 @@ body {
     object-position: center center;
     transform: none;
 }
-
-/* Right Photo */
 
 .right-photo {
     width: 432px;
@@ -174,7 +164,7 @@ body {
 
 
 /* =========================
-   CENTER GREETING
+   CENTER TEXT
    ========================= */
 
 .main-content {
@@ -182,27 +172,46 @@ body {
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 
-    text-align: center;
+    text-align: left;
 
     padding: 0 10px;
 }
 
 .main-content h1 {
     color: #f8dce5;
-
-    /* Everything is Times New Roman */
     font-family: "Times New Roman", Times, serif;
-
-    font-size: 64px;
     font-weight: normal;
-    line-height: 1.15;
-
+    line-height: 1.05;
     margin: 0;
 }
 
-/* Lauren is the ONLY word in cursive */
+
+/* BIG "HI," */
+
+.big-hi {
+    display: block;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 115px;
+    font-weight: normal;
+    line-height: 0.9;
+    margin-bottom: 15px;
+}
+
+
+/* REST OF GREETING */
+
+.rest-of-greeting {
+    display: block;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    font-weight: normal;
+    line-height: 1.15;
+}
+
+
+/* Lauren stays cursive */
 
 .cursive-name {
     font-family: "Ballet", cursive;
@@ -218,11 +227,8 @@ body {
 
 .footer {
     width: 100%;
-
     border-top: 2px solid #f8dce5;
-
     padding: 18px 20px;
-
     text-align: center;
 }
 
@@ -271,14 +277,18 @@ body {
         gap: 30px;
     }
 
-    .main-content h1 {
-        font-size: 50px;
+    .big-hi {
+        font-size: 85px;
+    }
+
+    .rest-of-greeting {
+        font-size: 40px;
     }
 }
 
 
 /* =========================
-   MOBILE / SMALL SCREEN
+   MOBILE
    ========================= */
 
 @media (max-width: 850px) {
@@ -286,11 +296,8 @@ body {
     .top-navigation {
         display: flex;
         flex-direction: column;
-
         height: auto;
-
         padding: 25px 15px;
-
         gap: 20px;
     }
 
@@ -309,7 +316,6 @@ body {
     .home-layout {
         display: flex;
         flex-direction: column;
-
         padding: 25px;
     }
 
@@ -326,14 +332,17 @@ body {
 
     .main-content {
         order: 2;
-
         min-height: 350px;
-
         padding: 40px 0;
+        width: 100%;
     }
 
-    .main-content h1 {
-        font-size: 45px;
+    .big-hi {
+        font-size: 75px;
+    }
+
+    .rest-of-greeting {
+        font-size: 38px;
     }
 
     .right-photo {
@@ -357,7 +366,11 @@ body {
         font-size: 16px;
     }
 
-    .main-content h1 {
-        font-size: 38px;
+    .big-hi {
+        font-size: 65px;
+    }
+
+    .rest-of-greeting {
+        font-size: 32px;
     }
 }
