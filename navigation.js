@@ -1,62 +1,41 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-
-    /* ========================================
-       LEFT NAVIGATION
-    ======================================== */
-
     const leftPages = [
-
         {
             name: "Home",
             link: "index.html"
         },
-
         {
             name: "About Me",
             link: "about.html"
         },
-
         {
             name: "Education",
             link: "education.html"
         }
-
     ];
 
 
-    /* ========================================
-       RIGHT NAVIGATION
-    ======================================== */
-
     const rightPages = [
-
         {
             name: "Experience",
             link: "experience.html"
         },
-
         {
             name: "Projects",
             link: "projects.html"
         },
-
         {
             name: "Contact",
             link: "contact.html"
         }
-
     ];
 
 
-    /* ========================================
-       FIND CURRENT PAGE
-    ======================================== */
-
     let currentPage =
         window.location.pathname
-        .split("/")
-        .pop();
+            .split("/")
+            .pop();
 
 
     if (currentPage === "") {
@@ -66,16 +45,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* ========================================
-       CREATE NAVIGATION
-    ======================================== */
-
     const navigation =
         document.getElementById("navigation");
 
 
     if (navigation) {
-
 
         navigation.innerHTML = `
 
@@ -83,23 +57,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 <div class="top-navigation">
 
-
                     <nav class="top-nav-left">
-
                     </nav>
 
 
                     <div class="site-name">
-
                         Lauren Bock
-
                     </div>
 
 
                     <nav class="top-nav-right">
-
                     </nav>
-
 
                 </div>
 
@@ -107,10 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         `;
 
-
-        /* ========================================
-           LEFT LINKS
-        ======================================== */
 
         const leftTopNav =
             document.querySelector(
@@ -120,14 +84,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         leftPages.forEach(function (page) {
 
-
             const link =
                 document.createElement("a");
 
-
             link.href =
                 page.link;
-
 
             link.textContent =
                 page.name;
@@ -147,10 +108,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-        /* ========================================
-           RIGHT LINKS
-        ======================================== */
-
         const rightTopNav =
             document.querySelector(
                 ".top-nav-right"
@@ -159,14 +116,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         rightPages.forEach(function (page) {
 
-
             const link =
                 document.createElement("a");
 
-
             link.href =
                 page.link;
-
 
             link.textContent =
                 page.name;
@@ -184,24 +138,6 @@ document.addEventListener("DOMContentLoaded", function () {
             rightTopNav.appendChild(link);
 
         });
-
-    }
-
-
-    /* ========================================
-       FOOTER YEAR
-    ======================================== */
-
-    const year =
-        document.getElementById(
-            "current-year"
-        );
-
-
-    if (year) {
-
-        year.textContent =
-            new Date().getFullYear();
 
     }
 
