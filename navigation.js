@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================
-       PAGE INFORMATION
+       LEFT SIDE NAVIGATION
     ========================== */
 
     const leftPages = [
@@ -24,6 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     ];
 
+
+    /* =========================
+       RIGHT SIDE NAVIGATION
+    ========================== */
 
     const rightPages = [
 
@@ -79,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="top-navigation">
 
 
-                    <!-- LEFT SIDE OF NAME -->
+                    <!-- LEFT LINKS -->
 
                     <nav class="top-nav-left">
                     </nav>
@@ -94,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
 
 
-                    <!-- RIGHT SIDE OF NAME -->
+                    <!-- RIGHT LINKS -->
 
                     <nav class="top-nav-right">
                     </nav>
@@ -108,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =========================
-           LEFT NAVIGATION LINKS
+           ADD LEFT LINKS
         ========================== */
 
         const leftTopNav =
@@ -118,7 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         leftPages.forEach(function (page) {
-
 
             const link =
                 document.createElement("a");
@@ -149,7 +152,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =========================
-           RIGHT NAVIGATION LINKS
+           ADD RIGHT LINKS
         ========================== */
 
         const rightTopNav =
@@ -159,7 +162,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         rightPages.forEach(function (page) {
-
 
             const link =
                 document.createElement("a");
